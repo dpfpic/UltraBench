@@ -1,0 +1,109 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
+        "projectName": "UltraBench",
+        "projectPath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
+        "packagesPath": "C:\\Users\\fpiscia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "CentralPackageTransitivePinningEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\fpiscia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1507"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows7.0",
+          "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.12.1, )",
+              "versionCentrallyManaged": true
+            },
+            "System.Management": {
+              "target": "Package",
+              "version": "[9.0.7, )",
+              "versionCentrallyManaged": true
+            },
+            "itext": {
+              "target": "Package",
+              "version": "[9.2.0, )",
+              "versionCentrallyManaged": true
+            },
+            "itext.bouncy-castle-adapter": {
+              "target": "Package",
+              "version": "[9.2.0, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "HtmlAgilityPack": "1.12.1",
+            "itext": "9.2.0",
+            "itext.bouncy-castle-adapter": "9.2.0",
+            "System.Management": "9.0.7"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
