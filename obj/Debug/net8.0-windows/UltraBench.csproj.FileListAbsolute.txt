@@ -99,10 +99,7 @@ D:\Developpements\UltraBench\obj\Debug\net8.0-windows\UltraBench.genruntimeconfi
 D:\Developpements\UltraBench\obj\Debug\net8.0-windows\ref\UltraBench.dll
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\UltraBench.csproj.AssemblyReference.cache
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\UltraBench.Form1.resources
-C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\UltraBench.FormScoreHelp.resources
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\UltraBench.ProgressForm.resources
-C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\UltraBench.Properties.Resources.resources
-C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\TestInProgressForm.resources
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\UltraBench.csproj.GenerateResource.cache
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\UltraBench.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\UltraBench.AssemblyInfoInputs.cache
@@ -114,7 +111,6 @@ C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\bin\Debug\net
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\bin\Debug\net8.0-windows\UltraBench.dll
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\bin\Debug\net8.0-windows\UltraBench.pdb
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
-C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\bin\Debug\net8.0-windows\HtmlAgilityPack.dll
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\bin\Debug\net8.0-windows\itext.barcodes.dll
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\bin\Debug\net8.0-windows\itext.bouncy-castle-connector.dll
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\bin\Debug\net8.0-windows\itext.forms.dll
@@ -150,3 +146,5 @@ C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\UltraBench.pdb
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\UltraBench.genruntimeconfig.cache
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\ref\UltraBench.dll
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\UltraBench.Properties.Resources.resources
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows\TestInProgressForm.resources

@@ -1,4 +1,11 @@
-﻿using System;
+//*********************************************
+// UltraBench Ver:1.0.0
+// Created by Dpfpic (Fabrice Piscia)
+// Site : https://github.com/dpfpic/UltraBench
+// Licensed under the MIT License
+//*********************************************
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -14,8 +21,6 @@ using static AppLocator;
 using DrawingPoint = System.Drawing.Point;
 using Path = System.IO.Path;
 
-
-
 namespace UltraBench
 {
     public partial class Form1 : Form
@@ -24,7 +29,7 @@ namespace UltraBench
         private List<BenchmarkResult> _benchmarkResults;
 
         // Paths of third-party executables
-        //private const string PassMarkExePath = @"C:\Program Files\PerformanceTest\PerformanceTest64.exe";
+        // private const string PassMarkExePath = @"C:\Program Files\PerformanceTest\PerformanceTest64.exe";
 
         // Property for HWMonitor path that searches for an installed version
         private string HWMonitorExePath
@@ -43,9 +48,9 @@ namespace UltraBench
             }
         }
 
-        /// <summary>
-        /// Constructor for the main form. Initializes components.
-        /// </summary>
+        // <summary>
+        // Constructor for the main form. Initializes components.
+        // </summary>
         public Form1()
         {
             InitializeComponent();
@@ -60,7 +65,7 @@ namespace UltraBench
             if (lblRamResult != null) lblRamResult.Text = "RAM Test: Not Executed";
         }
 
-        // Méthode pour initialiser l'état des labels de résultats au démarrage
+        // Method to initialize the state of result labels at startup
         private void InitializeResultLabels()
         {
             SetResultNotExecuted(lblCpuResult, "CPU"); // Initialise le texte et la couleur
@@ -69,10 +74,10 @@ namespace UltraBench
             SetResultNotExecuted(lblGpuResult, "GPU");
         }
 
-        // Méthode générique pour mettre à jour un label de résultat avec couleur
+        // Generic method to mettre à jour un label de résultat avec couleur
         private void UpdateResultLabel(Label resultLabel, string testName, double score, double goodThreshold, double averageThreshold)
         {
-            resultLabel.Text = $"{testName} Test: Score {score:F2}"; // :F2 pour formater avec 2 décimales si besoin
+            resultLabel.Text = $"{testName} Test: Score {score:F0}"; // :F2 pour formater avec 2 décimales si besoin
 
             if (score >= goodThreshold)
             {
@@ -88,17 +93,17 @@ namespace UltraBench
             }
         }
 
-        // Méthode pour un label non exécuté ou en cas d'erreur
+        // Method for a label not executed or in case of error
         private void SetResultNotExecuted(Label resultLabel, string testName)
         {
             resultLabel.Text = $"{testName} Test: Not Executed";
             resultLabel.ForeColor = BenchmarkDisplayConstants.COLOR_NOT_EXECUTED;
         }
 
-        /// <summary>
-        /// Event handler for the Form1 Load event.
-        /// This is where you put code that interacts with the UI and system after the form is fully initialized.
-        /// </summary>
+        // <summary>
+        // Event handler for the Form1 Load event.
+        // This is where you put code that interacts with the UI and system after the form is fully initialized.
+        // </summary>
         private void Form1_Load(object sender, EventArgs e)
         {
             versionLabel.Text = "Version : 1.0.0";
@@ -118,9 +123,9 @@ namespace UltraBench
         }
 
 
-        /// <summary>
-        /// Method that checks for the presence of external executables and adjusts button visibility.
-        /// </summary>
+        // <summary>
+        // Method that checks for the presence of external executables and adjusts button visibility.
+        // </summary>
         private void CheckExternalExecutablesPresence()
         {
             // Make the "Test GPU" button visible only if PassMark PerformanceTest is found.
@@ -258,7 +263,14 @@ namespace UltraBench
                 {
                     for (long i = 0; i < totalBlocks; i++)
                     {
-                        fs.Read(buffer, 0, buffer.Length);
+                        int bytesRead = fs.Read(buffer, 0, buffer.Length);
+
+                        int totalBytesRead = 0;
+                        int bytesReadThisIteration;
+                        while (totalBytesRead < buffer.Length && (bytesReadThisIteration = fs.Read(buffer, totalBytesRead, buffer.Length - totalBytesRead)) > 0)
+                        {
+                            totalBytesRead += bytesReadThisIteration;
+                        }
                         int currentProgress = 50 + (int)((double)i / totalBlocks * 50.0);
                         if (currentProgress < 50) currentProgress = 50;
                         if (currentProgress > 100) currentProgress = 100;
@@ -426,7 +438,7 @@ EXIT
 
                     if (!process.HasExited)
                     {
-                        // Tenter de tuer le processus si le timeout est atteint et qu'il ne s'est pas arrêté
+                        // Attempt to kill the process si le timeout est atteint et qu'il ne s'est pas arrêté
                         try
                         {
                             process.Kill();
@@ -449,7 +461,7 @@ EXIT
                 {
                     string reportContent = await File.ReadAllTextAsync(reportPath, Encoding.Default); // Change Encoding.Unicode to Encoding.Default or Encoding.UTF8 as HTML is often not Unicode
 
-                    // --- DÉBUT DE LA NOUVELLE LOGIQUE AVEC HTML AGILITY PACK ---
+                    // --- START OF NEW LOGIC AVEC HTML AGILITY PACK ---
                     var htmlDoc = new HtmlAgilityPack.HtmlDocument();
                     htmlDoc.LoadHtml(reportContent);
 
@@ -494,7 +506,7 @@ EXIT
                             }
                         }
                     }
-                    // --- FIN DE LA NOUVELLE LOGIQUE ---
+                    // --- END OF NEW LOGIC ---
 
                     return new BenchmarkResult
                     {
@@ -515,7 +527,7 @@ EXIT
             }
             catch (Exception ex)
             {
-                // N'oubliez pas de logger l'exception réelle pour le débogage !
+                // Don't forget to log l'exception réelle pour le débogage !
                 // Console.WriteLine($"Erreur: {ex.Message}");
                 return new BenchmarkResult
                 {
@@ -526,12 +538,12 @@ EXIT
             }
             finally
             {
-                // Nettoyage des fichiers temporaires, très bien ça !
+                // Cleanup temporary files temporaires, très bien ça !
                 if (File.Exists(scriptPath))
                 {
                     File.Delete(scriptPath);
                 }
-                // Tu peux aussi envisager de supprimer le rapport HTML si tu n'en as plus besoin après lecture
+                // You may also consider de supprimer le rapport HTML si tu n'en as plus besoin après lecture
                 if (File.Exists(reportPath))
                 {
                     File.Delete(reportPath);
@@ -605,10 +617,10 @@ EXIT
             }
         }
 
-        /// <summary>
-        /// Checks if the current application (UltraBench) is running with administrator privileges.
-        /// </summary>
-        /// <returns>True if the application is administrator, otherwise False.</returns>
+        // <summary>
+        // Checks if the current application (UltraBench) is running with administrator privileges.
+        // </summary>
+        // <returns>True if the application is administrator, otherwise False.</returns>
         private bool IsAdministrator()
         {
             using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
@@ -716,6 +728,9 @@ EXIT
 
         private async void btnTestCPU_Click(object sender, EventArgs e)
         {
+            // Clearing TextBoxes or Display Labels
+            SetResultNotExecuted(lblCpuResult, "CPU");
+
             using (ProgressForm progressForm = new ProgressForm("CPU Test Progress", "Starting CPU test..."))
             {
                 progressForm.Show();
@@ -725,8 +740,8 @@ EXIT
                     if (lblCpuResult != null)
                     {
                         UpdateResultLabel(lblCpuResult, "CPU", cpuResult.Score,
-                        BenchmarkDisplayConstants.CPU_SCORE_GOOD_THRESHOLD,
-                        BenchmarkDisplayConstants.CPU_SCORE_AVERAGE_THRESHOLD);
+                            BenchmarkDisplayConstants.CPU_SCORE_GOOD_THRESHOLD,
+                            BenchmarkDisplayConstants.CPU_SCORE_AVERAGE_THRESHOLD);
                     }
                     _benchmarkResults.Add(cpuResult);
                 }
@@ -738,35 +753,41 @@ EXIT
             }
         }
 
-        private async void btnTestGPU_Click(object sender, EventArgs e)
+        private async void btnTestRAM_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(PassMarkExePath) || !File.Exists(PassMarkExePath))
-            {
-                MessageBox.Show("PassMark PerformanceTest is not installed or cannot be found.", "Feature Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            // Clearing TextBoxes or Display Labels
+            SetResultNotExecuted(lblRamResult, "RAM");
 
-            using (ProgressForm progressForm = new ProgressForm("GPU Test Progress", "Starting GPU test..."))
+            // Ajoute un court délai pour permettre à l'UI de rafraîchir le label
+            await Task.Delay(20); // Attendre 20 millisecondes (ajuste si besoin)
+
+            using (ProgressForm progressForm = new ProgressForm("RAM Test Progress", "Starting RAM test..."))
             {
                 progressForm.Show();
-                BenchmarkResult gpuResult = await RunBenchmarkAndGetResult("GPU", 0, progressForm);
-
-                if (lblGpuResult != null)
-                //lblGpuResult.Text = $"GPU Test: {gpuResult.Score} {gpuResult.DetailedResult}";
-                //_benchmarkResults.Add(gpuResult);
+                BenchmarkResult ramResult = await Task.Run(() => RunBenchmarkAndGetResult("RAM", 0, progressForm));
+                if (ramResult != null)
                 {
-                    UpdateResultLabel(lblGpuResult, "GPU", gpuResult.Score,
-                                      BenchmarkDisplayConstants.GPU_SCORE_GOOD_THRESHOLD,
-                                      BenchmarkDisplayConstants.GPU_SCORE_AVERAGE_THRESHOLD);
-                    // lblGpuResult.Text += $" ({gpuResult.DetailedResult})";
+                    if (lblRamResult != null)
+                    {
+                        UpdateResultLabel(lblRamResult, "RAM", ramResult.Score,
+                                        BenchmarkDisplayConstants.RAM_SCORE_GOOD_THRESHOLD,
+                                        BenchmarkDisplayConstants.RAM_SCORE_AVERAGE_THRESHOLD);
+                    }
+                    _benchmarkResults.Add(ramResult);
                 }
-                _benchmarkResults.Add(gpuResult);
+                else
+                {
+                    SetResultNotExecuted(lblRamResult, "RAM");
+                }
                 progressForm.Close();
             }
         }
 
         private async void btnTestSSD_Click(object sender, EventArgs e)
         {
+            // Clearing TextBoxes or Display Labels
+            SetResultNotExecuted(lblSsdResult, "SSD");
+
             // --- ADDED: Explanation MessageBox for SSD Drive Selection (now in English) ---
             MessageBox.Show(
                 "The SSD/HDD performance test requires you to select the drive (e.g., C:\\ or D:\\) where temporary test files will be created. " +
@@ -787,14 +808,11 @@ EXIT
                     {
                         progressForm.Show();
                         BenchmarkResult ssdResult = await Task.Run(() => RunBenchmarkAndGetResult("SSD", 0, progressForm, selectedDrivePath));
-                        //if (lblSsdResult != null) lblSsdResult.Text = $"SSD Test: {ssdResult.Score} ({ssdResult.DetailedResult})";
-                        //_benchmarkResults.Add(ssdResult);
                         if (lblSsdResult != null)
                         {
                             UpdateResultLabel(lblSsdResult, "SSD", ssdResult.Score,
                                               BenchmarkDisplayConstants.SSD_SCORE_GOOD_THRESHOLD,
                                               BenchmarkDisplayConstants.SSD_SCORE_AVERAGE_THRESHOLD);
-                            // lblSsdResult.Text += $" ({ssdResult.DetailedResult})";
                         }
                         _benchmarkResults.Add(ssdResult);
                         progressForm.Close();
@@ -815,28 +833,39 @@ EXIT
                 }
             }
         }
-        private async void btnTestRAM_Click(object sender, EventArgs e)
+
+        private async void btnTestGPU_Click(object sender, EventArgs e)
         {
-            using (ProgressForm progressForm = new ProgressForm("RAM Test Progress", "Starting RAM test..."))
+            // Clearing TextBoxes or Display Labels
+            SetResultNotExecuted(lblGpuResult, "GPU");
+
+            if (string.IsNullOrEmpty(PassMarkExePath) || !File.Exists(PassMarkExePath))
+            {
+                MessageBox.Show("PassMark PerformanceTest is not installed or cannot be found.", "Feature Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (ProgressForm progressForm = new ProgressForm("GPU Test Progress", "Starting GPU test..."))
             {
                 progressForm.Show();
-                BenchmarkResult ramResult = await Task.Run(() => RunBenchmarkAndGetResult("RAM", 0, progressForm));
-                //if (lblRamResult != null) lblRamResult.Text = $"RAM Test: {ramResult.Score} ({ramResult.DetailedResult})";
-                //_benchmarkResults.Add(ramResult);
-                if (lblRamResult != null)
+                BenchmarkResult gpuResult = await RunBenchmarkAndGetResult("GPU", 0, progressForm);
+
+                if (lblGpuResult != null)
                 {
-                    UpdateResultLabel(lblRamResult, "RAM", ramResult.Score,
-                                      BenchmarkDisplayConstants.RAM_SCORE_GOOD_THRESHOLD,
-                                      BenchmarkDisplayConstants.RAM_SCORE_AVERAGE_THRESHOLD);
-                    // Si tu veux ajouter des détails :
-                    // lblRamResult.Text += $" ({ramResult.DetailedResult})";
+                    UpdateResultLabel(lblGpuResult, "GPU", gpuResult.Score,
+                                      BenchmarkDisplayConstants.GPU_SCORE_GOOD_THRESHOLD,
+                                      BenchmarkDisplayConstants.GPU_SCORE_AVERAGE_THRESHOLD);
                 }
-                _benchmarkResults.Add(ramResult);
+                _benchmarkResults.Add(gpuResult);
                 progressForm.Close();
             }
         }
+
         private async void btnFullStress_Click(object sender, EventArgs e)
         {
+            // Clearing TextBoxes or Display Labels
+            InitializeResultLabels();
+
             _benchmarkResults.Clear();
 
             // Guard to ensure the button is not clickable if it is hidden (though it should always be visible now)
@@ -852,24 +881,6 @@ EXIT
             // Execute tests sequentially in the desired order: CPU, RAM, GPU (conditional), SSD
             await ExecuteSingleBenchmark("CPU", BenchmarkSettingsConstants.TargetCpuBenchmarkDurationMs / 1000, null);
             await ExecuteSingleBenchmark("RAM", 0, null);
-
-            // --- Execute GPU test (conditional) ---
-            if (btnTestGPU.Visible) // Check if the GPU test is available (i.e., PassMark is installed)
-            {
-                await ExecuteSingleBenchmark("GPU", 0, null);
-            }
-            else
-            {
-                // If the GPU test is not available, add a result indicating it was skipped
-                _benchmarkResults.Add(new BenchmarkResult
-                {
-                    Title = "GPU",
-                    Score = 0,
-                    DetailedResult = "GPU Test skipped (PassMark PerformanceTest not found)",
-                    ActualDurationMs = 0,
-                    Success = false
-                });
-            }
 
             // --- UPDATED: Explanation MessageBox for SSD Drive Selection (now in English) ---
             MessageBox.Show(
@@ -905,6 +916,23 @@ EXIT
 
             await ExecuteSingleBenchmark("SSD", 0, selectedDrivePath); // SSD test after selection
 
+            // --- Execute GPU test (conditional) ---
+            if (btnTestGPU.Visible) // Check if the GPU test is available (i.e., PassMark is installed)
+            {
+                await ExecuteSingleBenchmark("GPU", 0, null);
+            }
+            else
+            {
+                // If the GPU test is not available, add a result indicating it was skipped
+                _benchmarkResults.Add(new BenchmarkResult
+                {
+                    Title = "GPU",
+                    Score = 0,
+                    DetailedResult = "GPU Test skipped (PassMark PerformanceTest not found)",
+                    ActualDurationMs = 0,
+                    Success = false
+                });
+            }
 
             MessageBox.Show("Full stress test completed!", "UltraBench", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -916,7 +944,8 @@ EXIT
                         _benchmarkResults,
                         GetProcessorName(),
                         GetTotalRamAmount(),
-                        GetGpuName()
+                        GetGpuName(),
+                        "Baseline 2025" // <-- C'est LA LIGNE À AJOUTER
                     );
                     // Removed the lines that open the reports folder automatically after Full Stress Test
                     // string reportsDir = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Reports");
@@ -938,16 +967,40 @@ EXIT
                 switch (testType)
                 {
                     case "CPU":
-                        if (lblCpuResult != null) lblCpuResult.Text = $"CPU Test: {result.Score} ({result.DetailedResult})";
+                        lblCpuResult.Text = $"CPU Test: {result.Score} ({result.DetailedResult})";
+                        if (lblCpuResult != null)
+                        {
+                            UpdateResultLabel(lblCpuResult, "CPU", result.Score,
+                                BenchmarkDisplayConstants.CPU_SCORE_GOOD_THRESHOLD,
+                                BenchmarkDisplayConstants.CPU_SCORE_AVERAGE_THRESHOLD);
+                        }
                         break;
                     case "SSD":
-                        if (lblSsdResult != null) lblSsdResult.Text = $"SSD Test: {result.Score} ({result.DetailedResult})";
+                        lblSsdResult.Text = $"SSD Test: {result.Score} ({result.DetailedResult})";
+                        if (lblSsdResult != null)
+                        {
+                            UpdateResultLabel(lblSsdResult, "SSD", result.Score,
+                                              BenchmarkDisplayConstants.SSD_SCORE_GOOD_THRESHOLD,
+                                              BenchmarkDisplayConstants.SSD_SCORE_AVERAGE_THRESHOLD);
+                        }
                         break;
                     case "RAM":
-                        if (lblRamResult != null) lblRamResult.Text = $"RAM Test: {result.Score} ({result.DetailedResult})";
+                        lblRamResult.Text = $"RAM Test: {result.Score} ({result.DetailedResult})";
+                        if (lblRamResult != null)
+                        {
+                            UpdateResultLabel(lblRamResult, "RAM", result.Score,
+                                              BenchmarkDisplayConstants.RAM_SCORE_GOOD_THRESHOLD,
+                                              BenchmarkDisplayConstants.RAM_SCORE_AVERAGE_THRESHOLD);
+                        }
                         break;
                     case "GPU":
-                        if (lblGpuResult != null) lblGpuResult.Text = $"GPU Test: {result.Score} ({result.DetailedResult})";
+                        lblGpuResult.Text = $"GPU Test: {result.Score} ({result.DetailedResult})";
+                        if (lblGpuResult != null)
+                        {
+                            UpdateResultLabel(lblGpuResult, "GPU", result.Score,
+                                              BenchmarkDisplayConstants.GPU_SCORE_GOOD_THRESHOLD,
+                                              BenchmarkDisplayConstants.GPU_SCORE_AVERAGE_THRESHOLD);
+                        }
                         break;
                 }
                 _benchmarkResults.Add(result);
@@ -961,10 +1014,11 @@ EXIT
             try
             {
                 PdfReportGenerator.GenerateReport(
-                     _benchmarkResults,
-                    GetProcessorName(),
-                    GetTotalRamAmount(),
-                    GetGpuName()
+                   _benchmarkResults,
+                   GetProcessorName(),
+                   GetTotalRamAmount(),
+                   GetGpuName(),
+                   "Baseline 2025" // <-- C'est LA LIGNE À AJOUTER
                 );
                 MessageBox.Show("PDF report generated successfully! The reports folder will open.", "Report Generated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 string reportsDir = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Reports");
@@ -995,5 +1049,9 @@ EXIT
             helpForm.ShowDialog();
         }
 
+        private void Title_Info_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,3 +1,6 @@
+// UltraBench – Created by Dpfpic (Fabrice Piscia)
+// Licensed under the MIT License
+//
 ﻿namespace UltraBench
 {
     partial class FormScoreHelp
@@ -28,10 +31,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormScoreHelp";
+            SuspendLayout();
+            // 
+            // FormScoreHelp
+            // 
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(812, 388);
+            MaximizeBox = false;
+            Name = "FormScoreHelp";
+            Text = "FormScoreHelp";
+            ResumeLayout(false);
         }
 
         #endregion

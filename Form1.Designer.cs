@@ -1,10 +1,17 @@
+//*********************************************
+// UltraBench Ver:1.0.0
+// Created by Dpfpic (Fabrice Piscia)
+// Site : https://github.com/dpfpic/UltraBench
+// Licensed under the MIT License
+//*********************************************
+
 namespace UltraBench
 {
     partial class Form1
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+        // <summary>
+        // Required designer variable.
+        // </summary>
         private System.ComponentModel.IContainer components = null;
 
         // --- Declarations of all UI controls used in Form1.cs ---
@@ -21,14 +28,14 @@ namespace UltraBench
         private System.Windows.Forms.Label lblCpuInfo;
         private System.Windows.Forms.Label lblRamInfo; // Declaration added/corrected
         private System.Windows.Forms.Label lblGpuInfo; // Declaration added/corrected
-        private System.Windows.Forms.Label lblSystemInfoTitl; // Declaration added/corrected
+        private System.Windows.Forms.Label Title_Info; // Declaration added/corrected
         private System.Windows.Forms.Label versionLabel;
 
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        // <summary>
+        // Clean up any resources being used.
+        // </summary>
+        // <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -40,10 +47,10 @@ namespace UltraBench
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+        // <summary>
+        // Required method for Designer support - do not modify
+        // the contents of this method with the code editor.
+        // </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
@@ -53,26 +60,26 @@ namespace UltraBench
             lblCpuInfo = new System.Windows.Forms.Label();
             lblRamInfo = new System.Windows.Forms.Label();
             lblGpuInfo = new System.Windows.Forms.Label();
-            lblSystemInfoTitl = new System.Windows.Forms.Label();
+            Title_Info = new System.Windows.Forms.Label();
             versionLabel = new System.Windows.Forms.Label();
             btnTestCPU = new System.Windows.Forms.Button();
             btnTestGPU = new System.Windows.Forms.Button();
             btnTestSSD = new System.Windows.Forms.Button();
             btnTestRAM = new System.Windows.Forms.Button();
             btnFullStress = new System.Windows.Forms.Button();
-            pictureBox1 = new System.Windows.Forms.PictureBox();
-            btnTitle = new System.Windows.Forms.Label();
-            lblResultsTitle = new System.Windows.Forms.Label();
-            panelSeparator2 = new System.Windows.Forms.Panel();
-            panelSeparator1 = new System.Windows.Forms.Panel();
+            logo_UlraBench = new System.Windows.Forms.PictureBox();
+            Title_Test = new System.Windows.Forms.Label();
+            Title_Bench = new System.Windows.Forms.Label();
+            Separator_2 = new System.Windows.Forms.Panel();
+            Separator_1 = new System.Windows.Forms.Panel();
             lblCpuResult = new System.Windows.Forms.Label();
             lblRamResult = new System.Windows.Forms.Label();
             lblSsdResult = new System.Windows.Forms.Label();
             lblGpuResult = new System.Windows.Forms.Label();
             deveTitle = new System.Windows.Forms.Label();
             flowLayoutPanelTests = new System.Windows.Forms.FlowLayoutPanel();
-            Bontton = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            Separator_3 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)logo_UlraBench).BeginInit();
             flowLayoutPanelTests.SuspendLayout();
             SuspendLayout();
             // 
@@ -139,17 +146,18 @@ namespace UltraBench
             lblGpuInfo.TabIndex = 5;
             lblGpuInfo.Text = "Graphics Card:";
             // 
-            // lblSystemInfoTitl
+            // Title_Info
             // 
-            lblSystemInfoTitl.AutoSize = true;
-            lblSystemInfoTitl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            lblSystemInfoTitl.ForeColor = System.Drawing.Color.DodgerBlue;
-            lblSystemInfoTitl.Location = new System.Drawing.Point(29, 25);
-            lblSystemInfoTitl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            lblSystemInfoTitl.Name = "lblSystemInfoTitl";
-            lblSystemInfoTitl.Size = new System.Drawing.Size(199, 28);
-            lblSystemInfoTitl.TabIndex = 6;
-            lblSystemInfoTitl.Text = "System Information";
+            Title_Info.AutoSize = true;
+            Title_Info.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            Title_Info.ForeColor = System.Drawing.Color.DodgerBlue;
+            Title_Info.Location = new System.Drawing.Point(29, 25);
+            Title_Info.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            Title_Info.Name = "Title_Info";
+            Title_Info.Size = new System.Drawing.Size(199, 28);
+            Title_Info.TabIndex = 6;
+            Title_Info.Text = "System Information";
+            Title_Info.Click += Title_Info_Click;
             // 
             // versionLabel
             // 
@@ -218,58 +226,58 @@ namespace UltraBench
             btnFullStress.UseVisualStyleBackColor = true;
             btnFullStress.Click += btnFullStress_Click;
             // 
-            // pictureBox1
+            // logo_UlraBench
             // 
-            pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new System.Drawing.Point(696, 41);
-            pictureBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(177, 207);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 13;
-            pictureBox1.TabStop = false;
+            logo_UlraBench.Image = (System.Drawing.Image)resources.GetObject("logo_UlraBench.Image");
+            logo_UlraBench.Location = new System.Drawing.Point(696, 41);
+            logo_UlraBench.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            logo_UlraBench.Name = "logo_UlraBench";
+            logo_UlraBench.Size = new System.Drawing.Size(177, 177);
+            logo_UlraBench.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            logo_UlraBench.TabIndex = 13;
+            logo_UlraBench.TabStop = false;
             // 
-            // btnTitle
+            // Title_Test
             // 
-            btnTitle.AutoSize = true;
-            btnTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            btnTitle.ForeColor = System.Drawing.Color.DodgerBlue;
-            btnTitle.Location = new System.Drawing.Point(30, 520);
-            btnTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            btnTitle.Name = "btnTitle";
-            btnTitle.Size = new System.Drawing.Size(154, 28);
-            btnTitle.TabIndex = 14;
-            btnTitle.Text = "Start Test Here";
+            Title_Test.AutoSize = true;
+            Title_Test.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            Title_Test.ForeColor = System.Drawing.Color.DodgerBlue;
+            Title_Test.Location = new System.Drawing.Point(30, 520);
+            Title_Test.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            Title_Test.Name = "Title_Test";
+            Title_Test.Size = new System.Drawing.Size(154, 28);
+            Title_Test.TabIndex = 14;
+            Title_Test.Text = "Start Test Here";
             // 
-            // lblResultsTitle
+            // Title_Bench
             // 
-            lblResultsTitle.AutoSize = true;
-            lblResultsTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            lblResultsTitle.ForeColor = System.Drawing.Color.DodgerBlue;
-            lblResultsTitle.Location = new System.Drawing.Point(30, 220);
-            lblResultsTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            lblResultsTitle.Name = "lblResultsTitle";
-            lblResultsTitle.Size = new System.Drawing.Size(192, 28);
-            lblResultsTitle.TabIndex = 15;
-            lblResultsTitle.Text = "Benchmark Results";
+            Title_Bench.AutoSize = true;
+            Title_Bench.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            Title_Bench.ForeColor = System.Drawing.Color.DodgerBlue;
+            Title_Bench.Location = new System.Drawing.Point(30, 220);
+            Title_Bench.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            Title_Bench.Name = "Title_Bench";
+            Title_Bench.Size = new System.Drawing.Size(192, 28);
+            Title_Bench.TabIndex = 15;
+            Title_Bench.Text = "Benchmark Results";
             // 
-            // panelSeparator2
+            // Separator_2
             // 
-            panelSeparator2.BackColor = System.Drawing.SystemColors.ControlDark;
-            panelSeparator2.Location = new System.Drawing.Point(30, 480);
-            panelSeparator2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            panelSeparator2.Name = "panelSeparator2";
-            panelSeparator2.Size = new System.Drawing.Size(858, 4);
-            panelSeparator2.TabIndex = 16;
+            Separator_2.BackColor = System.Drawing.SystemColors.ControlDark;
+            Separator_2.Location = new System.Drawing.Point(30, 480);
+            Separator_2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            Separator_2.Name = "Separator_2";
+            Separator_2.Size = new System.Drawing.Size(858, 4);
+            Separator_2.TabIndex = 16;
             // 
-            // panelSeparator1
+            // Separator_1
             // 
-            panelSeparator1.BackColor = System.Drawing.SystemColors.ControlDark;
-            panelSeparator1.Location = new System.Drawing.Point(32, 195);
-            panelSeparator1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            panelSeparator1.Name = "panelSeparator1";
-            panelSeparator1.Size = new System.Drawing.Size(549, 4);
-            panelSeparator1.TabIndex = 17;
+            Separator_1.BackColor = System.Drawing.SystemColors.ControlDark;
+            Separator_1.Location = new System.Drawing.Point(32, 195);
+            Separator_1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            Separator_1.Name = "Separator_1";
+            Separator_1.Size = new System.Drawing.Size(549, 4);
+            Separator_1.TabIndex = 17;
             // 
             // lblCpuResult
             // 
@@ -317,9 +325,9 @@ namespace UltraBench
             deveTitle.ForeColor = System.Drawing.SystemColors.ControlDark;
             deveTitle.Location = new System.Drawing.Point(138, 867);
             deveTitle.Name = "deveTitle";
-            deveTitle.Size = new System.Drawing.Size(198, 20);
+            deveTitle.Size = new System.Drawing.Size(253, 20);
             deveTitle.TabIndex = 22;
-            deveTitle.Text = "Developed by Dpfpic and IA";
+            deveTitle.Text = "Developed by Dpfpic (Fabrice Piscia)";
             // 
             // flowLayoutPanelTests
             // 
@@ -332,15 +340,15 @@ namespace UltraBench
             flowLayoutPanelTests.Size = new System.Drawing.Size(239, 261);
             flowLayoutPanelTests.TabIndex = 23;
             // 
-            // Bontton
+            // Separator_3
             // 
-            Bontton.BackColor = System.Drawing.SystemColors.Control;
-            Bontton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            Bontton.Location = new System.Drawing.Point(15, 901);
-            Bontton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            Bontton.Name = "Bontton";
-            Bontton.Size = new System.Drawing.Size(858, 4);
-            Bontton.TabIndex = 17;
+            Separator_3.BackColor = System.Drawing.SystemColors.Control;
+            Separator_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            Separator_3.Location = new System.Drawing.Point(15, 901);
+            Separator_3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            Separator_3.Name = "Separator_3";
+            Separator_3.Size = new System.Drawing.Size(858, 4);
+            Separator_3.TabIndex = 17;
             // 
             // Form1
             // 
@@ -348,7 +356,7 @@ namespace UltraBench
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new System.Drawing.Size(922, 908);
-            Controls.Add(Bontton);
+            Controls.Add(Separator_3);
             Controls.Add(flowLayoutPanelTests);
             Controls.Add(btnFullStress);
             Controls.Add(deveTitle);
@@ -359,14 +367,14 @@ namespace UltraBench
             Controls.Add(lblSsdResult);
             Controls.Add(lblRamResult);
             Controls.Add(lblCpuResult);
-            Controls.Add(panelSeparator1);
+            Controls.Add(Separator_1);
             Controls.Add(btnClose);
-            Controls.Add(panelSeparator2);
-            Controls.Add(lblResultsTitle);
-            Controls.Add(btnTitle);
-            Controls.Add(pictureBox1);
+            Controls.Add(Separator_2);
+            Controls.Add(Title_Bench);
+            Controls.Add(Title_Test);
+            Controls.Add(logo_UlraBench);
             Controls.Add(lblGpuInfo);
-            Controls.Add(lblSystemInfoTitl);
+            Controls.Add(Title_Info);
             Controls.Add(lblRamInfo);
             Controls.Add(lblCpuInfo);
             Controls.Add(versionLabel);
@@ -375,7 +383,7 @@ namespace UltraBench
             Name = "Form1";
             Text = "UltraBench by Dpfpic";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)logo_UlraBench).EndInit();
             flowLayoutPanelTests.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -383,17 +391,17 @@ namespace UltraBench
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label btnTitle;
-        private System.Windows.Forms.Label lblResultsTitle;
-        private System.Windows.Forms.Panel panelSeparator2;
-        private System.Windows.Forms.Panel panelSeparator1;
+        private System.Windows.Forms.PictureBox logo_UlraBench;
+        private System.Windows.Forms.Label Title_Test;
+        private System.Windows.Forms.Label Title_Bench;
+        private System.Windows.Forms.Panel Separator_2;
+        private System.Windows.Forms.Panel Separator_1;
         private System.Windows.Forms.Label lblCpuResult;
         private System.Windows.Forms.Label lblRamResult;
         private System.Windows.Forms.Label lblSsdResult;
         private System.Windows.Forms.Label lblGpuResult; // Declaration added/corrected
         private System.Windows.Forms.Label deveTitle;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTests;
-        private System.Windows.Forms.Panel Bontton;
+        private System.Windows.Forms.Panel Separator_3;
     }
 }

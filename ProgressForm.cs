@@ -1,4 +1,11 @@
-﻿using System; // Make sure to have this import for 'Action' if you use it elsewhere or Math
+//*********************************************
+// UltraBench Ver:1.0.0
+// Created by Dpfpic (Fabrice Piscia)
+// Site : https://github.com/dpfpic/UltraBench
+// Licensed under the MIT License
+//*********************************************
+
+using System; // Make sure to have this import for 'Action' if you use it elsewhere or Math
 using System.Windows.Forms; // For Form, Label, ProgressBar, MethodInvoker
 
 namespace UltraBench // Make sure this namespace is the same as your Form1
@@ -65,6 +72,7 @@ namespace UltraBench // Make sure this namespace is the same as your Form1
                         if (lblProgressText != null)
                         {
                             lblProgressText.Text = message;
+                            lblProgressText.Update();
                         }
                     });
                 }

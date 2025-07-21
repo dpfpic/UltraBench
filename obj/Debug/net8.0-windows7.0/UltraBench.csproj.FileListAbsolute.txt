@@ -36,10 +36,6 @@ C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\bin\Debug\net
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\bin\Debug\net8.0-windows7.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\UltraBench.csproj.AssemblyReference.cache
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\UltraBench.Form1.resources
-C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\UltraBench.FormScoreHelp.resources
-C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\UltraBench.ProgressForm.resources
-C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\UltraBench.Properties.Resources.resources
-C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\TestInProgressForm.resources
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\UltraBench.csproj.GenerateResource.cache
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\UltraBench.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\UltraBench.AssemblyInfoInputs.cache
@@ -51,3 +47,5 @@ C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\UltraBench.pdb
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\UltraBench.genruntimeconfig.cache
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\ref\UltraBench.dll
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\UltraBench.ProgressForm.resources
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net8.0-windows7.0\UltraBench.Properties.Resources.resources

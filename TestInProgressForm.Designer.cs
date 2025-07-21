@@ -1,4 +1,11 @@
-﻿using System.Windows.Forms;
+//*********************************************
+// UltraBench Ver:1.0.0
+// Created by Dpfpic (Fabrice Piscia)
+// Site : https://github.com/dpfpic/UltraBench
+// Licensed under the MIT License
+//*********************************************
+
+using System.Windows.Forms;
 
 partial class TestInProgressForm
 {

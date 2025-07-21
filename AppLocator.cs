@@ -1,4 +1,11 @@
-﻿using Microsoft.Win32;
+//*********************************************
+// UltraBench Ver:1.0.0
+// Created by Dpfpic (Fabrice Piscia)
+// Site : https://github.com/dpfpic/UltraBench
+// Licensed under the MIT License
+//*********************************************
+
+using Microsoft.Win32;
 using System;
 using System.Drawing;
 using System.IO;
@@ -6,12 +13,12 @@ using UltraBench;
 
 public static class AppLocator
 {
-    /// <summary>
-    /// Recherche le chemin d'installation d'une application via le registre Windows ou les chemins par défaut.
-    /// </summary>
-    /// <param name="appName">Nom de l'application tel qu'il apparaît dans "DisplayName" du registre (ex: "HWMonitor" ou "PerformanceTest").</param>
-    /// <param name="exeName">Nom de l'exécutable (ex: "HWMonitor.exe" ou "PerformanceTest64.exe").</param>
-    /// <returns>Chemin complet de l'exécutable si trouvé, sinon null.</returns>
+    // <summary>
+    // Searches for the installation path of an application via le registre Windows ou les chemins par défaut.
+    // </summary>
+    // <param name="appName">Name of the application tel qu'il apparaît dans "DisplayName" du registre (ex: "HWMonitor" ou "PerformanceTest").</param>
+    // <param name="exeName">Executable name (ex: "HWMonitor.exe" ou "PerformanceTest64.exe").</param>
+    // <returns>Full path of the executable if found, otherwise null.</returns>
     public static string LocateAppExecutable(string appName, string exeName)
     {
         // 1. Recherche dans les chemins par défaut (Program Files, Program Files (x86))
@@ -29,7 +36,7 @@ public static class AppLocator
             }
         }
 
-        // 2. Recherche dans le registre via GetInstalledProgramPath (plus générique)
+        // 2. Recherche in the registry via GetInstalledProgramPath (plus générique)
         string registryInstallLocation = GetInstalledProgramPath(appName);
         if (!string.IsNullOrEmpty(registryInstallLocation))
         {
@@ -62,11 +69,11 @@ public static class AppLocator
         return null;
     }
 
-    /// <summary>
-    /// Recherche le chemin d'installation de PassMark PerformanceTest en utilisant sa clé de registre spécifique,
-    /// puis une recherche générique si la première échoue.
-    /// </summary>
-    /// <returns>Chemin complet de l'exécutable de PassMark si trouvé, sinon null.</returns>
+    // <summary>
+    // Recherche le chemin d'installation de PassMark PerformanceTest en utilisant sa clé de registre spécifique,
+    // puis une recherche générique si la première échoue.
+    // </summary>
+    // <returns>Chemin complet de l'exécutable de PassMark si trouvé, sinon null.</returns>
     public static string LocatePerformanceTestExecutable()
     {
         // 1. Recherche spécifique via la clé de registre "ExePath" de PassMark (la plus fiable)
@@ -119,11 +126,11 @@ public static class AppLocator
     }
 
 
-    /// <summary>
-    /// Recherche le chemin d'installation d'un programme dans le registre Windows (Uninstall keys).
-    /// </summary>
-    /// <param name="appName">Nom de l'application tel qu'il apparaît dans "DisplayName" du registre.</param>
-    /// <returns>Chemin d'installation si trouvé, sinon null.</returns>
+    // <summary>
+    // Recherche le chemin d'installation d'un programme in the registry Windows (Uninstall keys).
+    // </summary>
+    // <param name="appName">Name of the application tel qu'il apparaît dans "DisplayName" du registre.</param>
+    // <returns>Chemin d'installation si trouvé, sinon null.</returns>
     private static string GetInstalledProgramPath(string appName)
     {
         // Chemins de désinstallation du registre à vérifier
@@ -223,13 +230,13 @@ public static class AppLocator
     }
     public static class BenchmarkDisplayConstants
     {
-        // Couleurs des résultats
+        // Result colors
         public static readonly Color COLOR_GOOD_RESULT = Color.Green;
         public static readonly Color COLOR_AVERAGE_RESULT = Color.Orange;
         public static readonly Color COLOR_BAD_RESULT = Color.Red;
         public static readonly Color COLOR_NOT_EXECUTED = Color.Gray; // Ou SystemColors.ControlText
 
-        // Seuils de score (valeurs d'exemple, tu devras les ajuster selon tes tests réels)
+        // Score thresholds (example values, you should adjust them selon tes tests réels)
         public const double CPU_SCORE_GOOD_THRESHOLD = 1000.0;
         public const double CPU_SCORE_AVERAGE_THRESHOLD = 500.0;
 

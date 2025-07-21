@@ -1,10 +1,17 @@
-﻿using System.Drawing;
+//*********************************************
+// UltraBench Ver:1.0.0
+// Created by Dpfpic (Fabrice Piscia)
+// Site : https://github.com/dpfpic/UltraBench
+// Licensed under the MIT License
+//*********************************************
+
+using System.Drawing;
 
 namespace UltraBench
 {
     public static class AppConstants
     {
-        // Noms des applications tels qu'ils peuvent apparaître dans le registre ou les chemins par défaut
+        // Noms des applications tels qu'ils peuvent apparaître in the registry ou les chemins par défaut
         public const string HW_MONITOR_APP_NAME = "HWMonitor";
         public const string PERFORMANCE_TEST_APP_NAME = "PerformanceTest";
         // Ajoute d'autres noms d'applications si nécessaire
@@ -36,13 +43,13 @@ namespace UltraBench
 
     public static class BenchmarkDisplayConstants
     {
-        // Couleurs des résultats
+        // Result colors
         public static readonly Color COLOR_GOOD_RESULT = Color.Green;
         public static readonly Color COLOR_AVERAGE_RESULT = Color.Orange;
         public static readonly Color COLOR_BAD_RESULT = Color.Red;
         public static readonly Color COLOR_NOT_EXECUTED = Color.Gray; // Ou SystemColors.ControlText
 
-        // Seuils de score (valeurs d'exemple, tu devras les ajuster selon tes tests réels)
+        // Score thresholds (example values, you should adjust them selon tes tests réels)
         public const double CPU_SCORE_GOOD_THRESHOLD = 1000.0;
         public const double CPU_SCORE_AVERAGE_THRESHOLD = 500.0;
 

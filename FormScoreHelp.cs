@@ -1,4 +1,11 @@
-﻿using System.Drawing;
+//*********************************************
+// UltraBench Ver:1.0.0
+// Created by Dpfpic (Fabrice Piscia)
+// Site : https://github.com/dpfpic/UltraBench
+// Licensed under the MIT License
+//*********************************************
+
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace UltraBench
@@ -26,9 +33,9 @@ namespace UltraBench
             lblExplanation.Location = new Point(20, 20);
             lblExplanation.Text =
 @"• CPU Score – Measures processing power and multitasking efficiency.
-• GPU Score – Evaluates graphics rendering and gaming performance.
-• SSD Score – Indicates read/write speed and data access time.
 • RAM Score – Reflects memory speed and data bandwidth.
+• SSD Score – Indicates read/write speed and data access time.
+• GPU Score – Evaluates graphics rendering and gaming performance.
 
 Higher scores mean better performance.
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0I1KvgNi14o=",
+  "dgSpecHash": "yjAAL74Pu3w=",
   "success": false,
   "projectFilePath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
   "expectedPackageFiles": [
@@ -9,8 +9,6 @@
     "C:\\Users\\fpiscia\\.nuget\\packages\\itext\\9.2.0\\itext.9.2.0.nupkg.sha512",
     "C:\\Users\\fpiscia\\.nuget\\packages\\itext.bouncy-castle-adapter\\9.2.0\\itext.bouncy-castle-adapter.9.2.0.nupkg.sha512",
     "C:\\Users\\fpiscia\\.nuget\\packages\\itext.commons\\9.2.0\\itext.commons.9.2.0.nupkg.sha512",
-    "C:\\Users\\fpiscia\\.nuget\\packages\\itext7\\9.2.0\\itext7.9.2.0.nupkg.sha512",
-    "C:\\Users\\fpiscia\\.nuget\\packages\\itext7.bouncy-castle-adapter\\9.2.0\\itext7.bouncy-castle-adapter.9.2.0.nupkg.sha512",
     "C:\\Users\\fpiscia\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\fpiscia\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\1.1.0\\microsoft.dotnet.platformabstractions.1.1.0.nupkg.sha512",
     "C:\\Users\\fpiscia\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
@@ -96,6 +94,28 @@
     "C:\\Users\\fpiscia\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Impossible de résoudre 'Microsoft.NET.ILLink.Tasks (>= 8.0.18)' pour 'net8.0-windows7.0'. PackageSourceMapping est activé, les sources suivantes n'ont pas été prises en compte\u00A0: Microsoft Visual Studio Offline Packages, NuGet.",
+      "projectPath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
+      "filePath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
+      "libraryId": "Microsoft.NET.ILLink.Tasks",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Impossible de résoudre 'Microsoft.NET.ILLink.Tasks (>= 8.0.18)' pour 'net8.0-windows7.0/win-x64'. PackageSourceMapping est activé, les sources suivantes n'ont pas été prises en compte\u00A0: Microsoft Visual Studio Offline Packages, NuGet.",
+      "projectPath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
+      "filePath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
+      "libraryId": "Microsoft.NET.ILLink.Tasks",
+      "targetGraphs": [
+        "net8.0-windows7.0/win-x64"
+      ]
+    },
     {
       "code": "NU1100",
       "level": "Error",
@@ -303,6 +323,39 @@
       "libraryId": "runtime.any.System.Diagnostics.Tracing",
       "targetGraphs": [
         "net8.0-windows7.0/win-x64"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Impossible de résoudre 'Microsoft.NETCore.App.Runtime.win-x64 (= 8.0.18)' pour 'net8.0-windows7.0'. PackageSourceMapping est activé, les sources suivantes n'ont pas été prises en compte\u00A0: Microsoft Visual Studio Offline Packages, NuGet.",
+      "projectPath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
+      "filePath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
+      "libraryId": "Microsoft.NETCore.App.Runtime.win-x64",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Impossible de résoudre 'Microsoft.WindowsDesktop.App.Runtime.win-x64 (= 8.0.18)' pour 'net8.0-windows7.0'. PackageSourceMapping est activé, les sources suivantes n'ont pas été prises en compte\u00A0: Microsoft Visual Studio Offline Packages, NuGet.",
+      "projectPath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
+      "filePath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
+      "libraryId": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Impossible de résoudre 'Microsoft.AspNetCore.App.Runtime.win-x64 (= 8.0.18)' pour 'net8.0-windows7.0'. PackageSourceMapping est activé, les sources suivantes n'ont pas été prises en compte\u00A0: Microsoft Visual Studio Offline Packages, NuGet.",
+      "projectPath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
+      "filePath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
+      "libraryId": "Microsoft.AspNetCore.App.Runtime.win-x64",
+      "targetGraphs": [
+        "net8.0-windows7.0"
       ]
     }
   ]

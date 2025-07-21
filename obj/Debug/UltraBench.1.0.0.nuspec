@@ -5,22 +5,28 @@
     <version>1.0.0</version>
     <authors>UltraBench</authors>
     <description>Package Description</description>
-    <repository type="git" />
+    <repository type="git" commit="2e50aa534c5361212f8a742a96ecc9d2effd0bb6" />
     <dependencies>
-      <group targetFramework="net8.0-windows7.0">
-        <dependency id="System.Management" version="9.0.6" exclude="Build,Analyzers" />
-        <dependency id="itext7" version="9.2.0" exclude="Build,Analyzers" />
-        <dependency id="itext7.bouncy-castle-adapter" version="9.2.0" exclude="Build,Analyzers" />
+      <group targetFramework="net9.0-windows7.0">
+        <dependency id="HtmlAgilityPack" version="1.12.1" exclude="Build,Analyzers" />
+        <dependency id="System.Management" version="9.0.7" exclude="Build,Analyzers" />
+        <dependency id="itext" version="9.2.0" exclude="Build,Analyzers" />
+        <dependency id="itext.bouncy-castle-adapter" version="9.2.0" exclude="Build,Analyzers" />
       </group>
     </dependencies>
     <frameworkReferences>
-      <group targetFramework="net8.0-windows7.0">
+      <group targetFramework="net9.0-windows7.0">
         <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
       </group>
     </frameworkReferences>
+    <contentFiles>
+      <files include="any/net9.0-windows7.0/flav_UltraBench.ico" buildAction="Content" />
+    </contentFiles>
   </metadata>
   <files>
-    <file src="D:\UltraBench\bin\Debug\net8.0-windows\UltraBench.runtimeconfig.json" target="lib\net8.0-windows7.0\UltraBench.runtimeconfig.json" />
-    <file src="D:\UltraBench\bin\Debug\net8.0-windows\UltraBench.dll" target="lib\net8.0-windows7.0\UltraBench.dll" />
+    <file src="C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\bin\Debug\net9.0-windows7.0\UltraBench.runtimeconfig.json" target="lib\net9.0-windows7.0\UltraBench.runtimeconfig.json" />
+    <file src="C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\bin\Debug\net9.0-windows7.0\UltraBench.dll" target="lib\net9.0-windows7.0\UltraBench.dll" />
+    <file src="C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\flav_UltraBench.ico" target="content\flav_UltraBench.ico" />
+    <file src="C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\flav_UltraBench.ico" target="contentFiles\any\net9.0-windows7.0\flav_UltraBench.ico" />
   </files>
 </package>

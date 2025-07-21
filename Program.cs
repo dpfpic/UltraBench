@@ -1,3 +1,6 @@
+// UltraBench – Created by Dpfpic (Fabrice Piscia)
+// Licensed under the MIT License
+//
 using System;
 using System.Windows.Forms;
 
