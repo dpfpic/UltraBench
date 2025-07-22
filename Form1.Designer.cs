@@ -79,283 +79,177 @@ namespace UltraBench
             deveTitle = new System.Windows.Forms.Label();
             flowLayoutPanelTests = new System.Windows.Forms.FlowLayoutPanel();
             Separator_3 = new System.Windows.Forms.Panel();
+            btnShowHistory = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)logo_UlraBench).BeginInit();
             flowLayoutPanelTests.SuspendLayout();
             SuspendLayout();
             // 
             // btnLaunchHWMonitor
             // 
-            btnLaunchHWMonitor.Location = new System.Drawing.Point(5, 117);
-            btnLaunchHWMonitor.Margin = new System.Windows.Forms.Padding(5, 33, 5, 4);
+            resources.ApplyResources(btnLaunchHWMonitor, "btnLaunchHWMonitor");
             btnLaunchHWMonitor.Name = "btnLaunchHWMonitor";
-            btnLaunchHWMonitor.Size = new System.Drawing.Size(229, 47);
-            btnLaunchHWMonitor.TabIndex = 0;
-            btnLaunchHWMonitor.Text = "Launch HWMonitor";
             btnLaunchHWMonitor.UseVisualStyleBackColor = true;
             btnLaunchHWMonitor.Click += btnLaunchHWMonitor_Click;
             // 
             // btnOpenReports
             // 
-            btnOpenReports.Location = new System.Drawing.Point(5, 201);
-            btnOpenReports.Margin = new System.Windows.Forms.Padding(5, 33, 5, 4);
+            resources.ApplyResources(btnOpenReports, "btnOpenReports");
             btnOpenReports.Name = "btnOpenReports";
-            btnOpenReports.Size = new System.Drawing.Size(229, 47);
-            btnOpenReports.TabIndex = 1;
-            btnOpenReports.Text = "Open Reports Folder";
             btnOpenReports.UseVisualStyleBackColor = true;
             btnOpenReports.Click += btnOpenReports_Click;
             // 
             // btnClose
             // 
-            btnClose.Location = new System.Drawing.Point(624, 816);
-            btnClose.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            resources.ApplyResources(btnClose, "btnClose");
             btnClose.Name = "btnClose";
-            btnClose.Size = new System.Drawing.Size(229, 47);
-            btnClose.TabIndex = 2;
-            btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
             // lblCpuInfo
             // 
-            lblCpuInfo.AutoSize = true;
-            lblCpuInfo.Location = new System.Drawing.Point(32, 79);
-            lblCpuInfo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            resources.ApplyResources(lblCpuInfo, "lblCpuInfo");
             lblCpuInfo.Name = "lblCpuInfo";
-            lblCpuInfo.Size = new System.Drawing.Size(75, 20);
-            lblCpuInfo.TabIndex = 3;
-            lblCpuInfo.Text = "Processor:";
             // 
             // lblRamInfo
             // 
-            lblRamInfo.AutoSize = true;
-            lblRamInfo.Location = new System.Drawing.Point(32, 111);
-            lblRamInfo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            resources.ApplyResources(lblRamInfo, "lblRamInfo");
             lblRamInfo.Name = "lblRamInfo";
-            lblRamInfo.Size = new System.Drawing.Size(44, 20);
-            lblRamInfo.TabIndex = 4;
-            lblRamInfo.Text = "RAM:";
             // 
             // lblGpuInfo
             // 
-            lblGpuInfo.AutoSize = true;
-            lblGpuInfo.Location = new System.Drawing.Point(30, 143);
-            lblGpuInfo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            resources.ApplyResources(lblGpuInfo, "lblGpuInfo");
             lblGpuInfo.Name = "lblGpuInfo";
-            lblGpuInfo.Size = new System.Drawing.Size(104, 20);
-            lblGpuInfo.TabIndex = 5;
-            lblGpuInfo.Text = "Graphics Card:";
             // 
             // Title_Info
             // 
-            Title_Info.AutoSize = true;
-            Title_Info.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(Title_Info, "Title_Info");
             Title_Info.ForeColor = System.Drawing.Color.DodgerBlue;
-            Title_Info.Location = new System.Drawing.Point(29, 25);
-            Title_Info.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             Title_Info.Name = "Title_Info";
-            Title_Info.Size = new System.Drawing.Size(199, 28);
-            Title_Info.TabIndex = 6;
-            Title_Info.Text = "System Information";
             Title_Info.Click += Title_Info_Click;
             // 
             // versionLabel
             // 
-            versionLabel.AutoSize = true;
-            versionLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            resources.ApplyResources(versionLabel, "versionLabel");
             versionLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            versionLabel.Location = new System.Drawing.Point(15, 867);
-            versionLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             versionLabel.Name = "versionLabel";
-            versionLabel.Size = new System.Drawing.Size(64, 20);
-            versionLabel.TabIndex = 7;
-            versionLabel.Text = "Version: ";
             // 
             // btnTestCPU
             // 
-            btnTestCPU.Location = new System.Drawing.Point(32, 579);
-            btnTestCPU.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            resources.ApplyResources(btnTestCPU, "btnTestCPU");
             btnTestCPU.Name = "btnTestCPU";
-            btnTestCPU.Size = new System.Drawing.Size(229, 47);
-            btnTestCPU.TabIndex = 8;
-            btnTestCPU.Text = "Test CPU";
             btnTestCPU.UseVisualStyleBackColor = true;
             btnTestCPU.Click += btnTestCPU_Click;
             // 
             // btnTestGPU
             // 
-            btnTestGPU.Location = new System.Drawing.Point(5, 33);
-            btnTestGPU.Margin = new System.Windows.Forms.Padding(5, 33, 5, 4);
+            resources.ApplyResources(btnTestGPU, "btnTestGPU");
             btnTestGPU.Name = "btnTestGPU";
-            btnTestGPU.Size = new System.Drawing.Size(229, 47);
-            btnTestGPU.TabIndex = 9;
-            btnTestGPU.Text = "Test GPU";
             btnTestGPU.UseVisualStyleBackColor = true;
             btnTestGPU.Click += btnTestGPU_Click;
             // 
             // btnTestSSD
             // 
-            btnTestSSD.Location = new System.Drawing.Point(32, 747);
-            btnTestSSD.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            resources.ApplyResources(btnTestSSD, "btnTestSSD");
             btnTestSSD.Name = "btnTestSSD";
-            btnTestSSD.Size = new System.Drawing.Size(229, 47);
-            btnTestSSD.TabIndex = 10;
-            btnTestSSD.Text = "Test SSD/HDD";
             btnTestSSD.UseVisualStyleBackColor = true;
             btnTestSSD.Click += btnTestSSD_Click;
             // 
             // btnTestRAM
             // 
-            btnTestRAM.Location = new System.Drawing.Point(32, 663);
-            btnTestRAM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            resources.ApplyResources(btnTestRAM, "btnTestRAM");
             btnTestRAM.Name = "btnTestRAM";
-            btnTestRAM.Size = new System.Drawing.Size(229, 47);
-            btnTestRAM.TabIndex = 11;
-            btnTestRAM.Text = "Test RAM";
             btnTestRAM.UseVisualStyleBackColor = true;
             btnTestRAM.Click += btnTestRAM_Click;
             // 
             // btnFullStress
             // 
-            btnFullStress.Location = new System.Drawing.Point(624, 663);
-            btnFullStress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            resources.ApplyResources(btnFullStress, "btnFullStress");
             btnFullStress.Name = "btnFullStress";
-            btnFullStress.Size = new System.Drawing.Size(229, 47);
-            btnFullStress.TabIndex = 12;
-            btnFullStress.Text = "Full Stress Test";
             btnFullStress.UseVisualStyleBackColor = true;
             btnFullStress.Click += btnFullStress_Click;
             // 
             // logo_UlraBench
             // 
-            logo_UlraBench.Image = (System.Drawing.Image)resources.GetObject("logo_UlraBench.Image");
-            logo_UlraBench.Location = new System.Drawing.Point(696, 41);
-            logo_UlraBench.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            resources.ApplyResources(logo_UlraBench, "logo_UlraBench");
             logo_UlraBench.Name = "logo_UlraBench";
-            logo_UlraBench.Size = new System.Drawing.Size(177, 177);
-            logo_UlraBench.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            logo_UlraBench.TabIndex = 13;
             logo_UlraBench.TabStop = false;
             // 
             // Title_Test
             // 
-            Title_Test.AutoSize = true;
-            Title_Test.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(Title_Test, "Title_Test");
             Title_Test.ForeColor = System.Drawing.Color.DodgerBlue;
-            Title_Test.Location = new System.Drawing.Point(30, 520);
-            Title_Test.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             Title_Test.Name = "Title_Test";
-            Title_Test.Size = new System.Drawing.Size(154, 28);
-            Title_Test.TabIndex = 14;
-            Title_Test.Text = "Start Test Here";
             // 
             // Title_Bench
             // 
-            Title_Bench.AutoSize = true;
-            Title_Bench.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(Title_Bench, "Title_Bench");
             Title_Bench.ForeColor = System.Drawing.Color.DodgerBlue;
-            Title_Bench.Location = new System.Drawing.Point(30, 220);
-            Title_Bench.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             Title_Bench.Name = "Title_Bench";
-            Title_Bench.Size = new System.Drawing.Size(192, 28);
-            Title_Bench.TabIndex = 15;
-            Title_Bench.Text = "Benchmark Results";
             // 
             // Separator_2
             // 
             Separator_2.BackColor = System.Drawing.SystemColors.ControlDark;
-            Separator_2.Location = new System.Drawing.Point(30, 480);
-            Separator_2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            resources.ApplyResources(Separator_2, "Separator_2");
             Separator_2.Name = "Separator_2";
-            Separator_2.Size = new System.Drawing.Size(858, 4);
-            Separator_2.TabIndex = 16;
             // 
             // Separator_1
             // 
             Separator_1.BackColor = System.Drawing.SystemColors.ControlDark;
-            Separator_1.Location = new System.Drawing.Point(32, 195);
-            Separator_1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            resources.ApplyResources(Separator_1, "Separator_1");
             Separator_1.Name = "Separator_1";
-            Separator_1.Size = new System.Drawing.Size(549, 4);
-            Separator_1.TabIndex = 17;
             // 
             // lblCpuResult
             // 
-            lblCpuResult.AutoSize = true;
-            lblCpuResult.Location = new System.Drawing.Point(29, 272);
-            lblCpuResult.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            resources.ApplyResources(lblCpuResult, "lblCpuResult");
             lblCpuResult.Name = "lblCpuResult";
-            lblCpuResult.Size = new System.Drawing.Size(162, 20);
-            lblCpuResult.TabIndex = 18;
-            lblCpuResult.Text = "CPU Test: Not Executed";
             // 
             // lblRamResult
             // 
-            lblRamResult.AutoSize = true;
-            lblRamResult.Location = new System.Drawing.Point(30, 320);
-            lblRamResult.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            resources.ApplyResources(lblRamResult, "lblRamResult");
             lblRamResult.Name = "lblRamResult";
-            lblRamResult.Size = new System.Drawing.Size(167, 20);
-            lblRamResult.TabIndex = 19;
-            lblRamResult.Text = "RAM Test: Not Executed";
             // 
             // lblSsdResult
             // 
-            lblSsdResult.AutoSize = true;
-            lblSsdResult.Location = new System.Drawing.Point(32, 369);
-            lblSsdResult.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            resources.ApplyResources(lblSsdResult, "lblSsdResult");
             lblSsdResult.Name = "lblSsdResult";
-            lblSsdResult.Size = new System.Drawing.Size(162, 20);
-            lblSsdResult.TabIndex = 20;
-            lblSsdResult.Text = "SSD Test: Not Executed";
             // 
             // lblGpuResult
             // 
-            lblGpuResult.AutoSize = true;
-            lblGpuResult.Location = new System.Drawing.Point(29, 420);
-            lblGpuResult.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            resources.ApplyResources(lblGpuResult, "lblGpuResult");
             lblGpuResult.Name = "lblGpuResult";
-            lblGpuResult.Size = new System.Drawing.Size(163, 20);
-            lblGpuResult.TabIndex = 21;
-            lblGpuResult.Text = "GPU Test: Not Executed";
             // 
             // deveTitle
             // 
-            deveTitle.AutoSize = true;
+            resources.ApplyResources(deveTitle, "deveTitle");
             deveTitle.ForeColor = System.Drawing.SystemColors.ControlDark;
-            deveTitle.Location = new System.Drawing.Point(138, 867);
             deveTitle.Name = "deveTitle";
-            deveTitle.Size = new System.Drawing.Size(253, 20);
-            deveTitle.TabIndex = 22;
-            deveTitle.Text = "Developed by Dpfpic (Fabrice Piscia)";
             // 
             // flowLayoutPanelTests
             // 
             flowLayoutPanelTests.Controls.Add(btnTestGPU);
             flowLayoutPanelTests.Controls.Add(btnLaunchHWMonitor);
             flowLayoutPanelTests.Controls.Add(btnOpenReports);
-            flowLayoutPanelTests.Location = new System.Drawing.Point(318, 545);
-            flowLayoutPanelTests.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            resources.ApplyResources(flowLayoutPanelTests, "flowLayoutPanelTests");
             flowLayoutPanelTests.Name = "flowLayoutPanelTests";
-            flowLayoutPanelTests.Size = new System.Drawing.Size(239, 261);
-            flowLayoutPanelTests.TabIndex = 23;
             // 
             // Separator_3
             // 
             Separator_3.BackColor = System.Drawing.SystemColors.Control;
-            Separator_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            Separator_3.Location = new System.Drawing.Point(15, 901);
-            Separator_3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            resources.ApplyResources(Separator_3, "Separator_3");
             Separator_3.Name = "Separator_3";
-            Separator_3.Size = new System.Drawing.Size(858, 4);
-            Separator_3.TabIndex = 17;
+            // 
+            // btnShowHistory
+            // 
+            resources.ApplyResources(btnShowHistory, "btnShowHistory");
+            btnShowHistory.Name = "btnShowHistory";
+            btnShowHistory.UseVisualStyleBackColor = true;
+            btnShowHistory.Click += btnShowHistory_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            AutoSize = true;
-            ClientSize = new System.Drawing.Size(922, 908);
+            Controls.Add(btnShowHistory);
             Controls.Add(Separator_3);
             Controls.Add(flowLayoutPanelTests);
             Controls.Add(btnFullStress);
@@ -378,10 +272,7 @@ namespace UltraBench
             Controls.Add(lblRamInfo);
             Controls.Add(lblCpuInfo);
             Controls.Add(versionLabel);
-            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "Form1";
-            Text = "UltraBench by Dpfpic";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)logo_UlraBench).EndInit();
             flowLayoutPanelTests.ResumeLayout(false);
@@ -403,5 +294,6 @@ namespace UltraBench
         private System.Windows.Forms.Label deveTitle;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTests;
         private System.Windows.Forms.Panel Separator_3;
+        private System.Windows.Forms.Button btnShowHistory;
     }
 }

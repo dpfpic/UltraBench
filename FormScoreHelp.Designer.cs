@@ -31,19 +31,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormScoreHelp));
+            lblExplanation = new System.Windows.Forms.Label();
+            btnClose = new System.Windows.Forms.Button();
             SuspendLayout();
+            // 
+            // lblExplanation
+            // 
+            resources.ApplyResources(lblExplanation, "lblExplanation");
+            lblExplanation.Name = "lblExplanation";
+            // 
+            // btnClose
+            // 
+            resources.ApplyResources(btnClose, "btnClose");
+            btnClose.Name = "btnClose";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // FormScoreHelp
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(812, 388);
+            Controls.Add(btnClose);
+            Controls.Add(lblExplanation);
             MaximizeBox = false;
             Name = "FormScoreHelp";
-            Text = "FormScoreHelp";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblExplanation;
+        private System.Windows.Forms.Button btnClose;
     }
 }

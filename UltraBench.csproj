@@ -13,7 +13,9 @@
     <PackageReference Include="HtmlAgilityPack" />
     <PackageReference Include="itext" />
     <PackageReference Include="itext.bouncy-castle-adapter" />
+    <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="System.Management" />
+    <PackageReference Include="System.Text.Json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">

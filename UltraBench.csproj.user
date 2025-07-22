@@ -10,6 +10,9 @@
     <Compile Update="FormScoreHelp.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ProgressForm.cs">
       <SubType>Form</SubType>
     </Compile>

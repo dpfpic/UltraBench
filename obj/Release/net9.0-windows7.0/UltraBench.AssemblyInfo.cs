@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UltraBench")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e50aa534c5361212f8a742a96ecc9d2effd0bb6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c68e25af3effab5926277207cebb31c8825052b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("UltraBench")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UltraBench")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.IO.Pipelines;
 using System.Linq;
 using System.Management;
 using System.Security.Principal;
@@ -27,6 +28,9 @@ namespace UltraBench
     {
         private Random _random = new Random();
         private List<BenchmarkResult> _benchmarkResults;
+
+        // Assuming you have _benchmarkResults already
+        private BenchmarkHistoryManager _historyManager;
 
         // Paths of third-party executables
         // private const string PassMarkExePath = @"C:\Program Files\PerformanceTest\PerformanceTest64.exe";
@@ -58,6 +62,23 @@ namespace UltraBench
             InitializeResultLabels();
 
             _benchmarkResults = new List<BenchmarkResult>();
+
+            // --- Initialisation du BenchmarkHistoryManager ---
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string ultraBenchFolderPath = Path.Combine(appDataPath, "UltraBench"); // Crée un dossier "UltraBench" dans AppData/Roaming
+
+            // Crée le dossier s'il n'existe pas
+            if (!Directory.Exists(ultraBenchFolderPath))
+            {
+                Directory.CreateDirectory(ultraBenchFolderPath);
+            }
+
+            string historyFilePath = Path.Combine(ultraBenchFolderPath, "benchmark_history.json");
+            _historyManager = new BenchmarkHistoryManager(historyFilePath);
+            // --- Fin de l'initialisation ---
+
+            //LoadBenchmarkSettings(); // Assuming you have this for other settings
+            //ApplyBenchmarkSettings();
 
             if (lblCpuResult != null) lblCpuResult.Text = "CPU Test: Not Executed";
             if (lblGpuResult != null) lblGpuResult.Text = "GPU Test: Not Executed";
@@ -639,8 +660,17 @@ EXIT
 
         }
 
-        private async Task<BenchmarkResult> RunBenchmarkAndGetResult(string testType, int durationSeconds, ProgressForm progressForm, string specificDrivePath = null)
+        private void btnShowHistory_Click(object sender, EventArgs e)
         {
+            // Create an instance of HistoryForm, passing the existing history manager
+            HistoryForm historyForm = new HistoryForm(_historyManager);
+            historyForm.ShowDialog(); // Show it as a modal dialog (blocks parent until closed)
+                                      // Or historyForm.Show(); // Show as non-modal (parent form remains usable)
+                                      // ShowDialog() is generally preferred for this kind of window.
+        }
+
+        private async Task<BenchmarkResult> RunBenchmarkAndGetResult(string testType, int durationSeconds, ProgressForm progressForm, string specificDrivePath = null)
+        {           
             BenchmarkResult result = null;
             Action<int, string> updateProgressAction = (percentage, message) =>
             {
@@ -692,7 +722,8 @@ EXIT
                                 Score = (int)score,
                                 DetailedResult = $"Primes found: {primesFound}, Time: {finalSw.ElapsedMilliseconds} ms",
                                 ActualDurationMs = finalSw.ElapsedMilliseconds,
-                                Success = true
+                                Success = true,
+                                Timestamp = DateTime.Now // *** AJOUTE CETTE LIGNE ICI ***
                             };
                             updateProgressAction(100, "CPU : Benchmark Complete.");
                         });
@@ -701,19 +732,28 @@ EXIT
                     case "SSD":
                         progressForm.UpdateProgress("SSD : Starting SSD benchmark...", 0);
                         result = await Task.Run(() => RunSsdBenchmarkCombined(specificDrivePath, updateProgressAction));
+                        // *** AJOUTE CETTE LIGNE ICI APRÈS L'ASSIGNATION DU RÉSULTAT ***
+                        if (result != null) { result.Timestamp = DateTime.Now; }
                         break;
 
                     case "RAM":
                         progressForm.UpdateProgress("RAM : Starting RAM benchmark...", 0);
                         result = await Task.Run(() => RunRamBenchmark(updateProgressAction));
+                        // *** AJOUTE CETTE LIGNE ICI APRÈS L'ASSIGNATION DU RÉSULTAT ***
+                        if (result != null) { result.Timestamp = DateTime.Now; }
                         break;
 
                     case "GPU":
                         result = await RunGpuBenchmarkPassMark(progressForm);
+                        // *** AJOUTE CETTE LIGNE ICI APRÈS L'ASSIGNATION DU RÉSULTAT ***
+                        if (result != null) { result.Timestamp = DateTime.Now; }
                         break;
 
                     default:
                         result = new BenchmarkResult { Title = testType, Score = 0, DetailedResult = "Test type not recognized.", Success = false };
+                        // Pour le cas par défaut (erreur), tu peux aussi mettre un timestamp si tu veux,
+                        // mais ce n'est pas obligatoire car le test n'a pas réussi.
+                        // result.Timestamp = DateTime.Now;
                         break;
                 }
             }
@@ -722,6 +762,8 @@ EXIT
                 result = new BenchmarkResult { Title = testType, Score = 0, DetailedResult = $"Error: {ex.Message}", Success = false };
                 updateProgressAction(0, $"{testType} : Error: {ex.Message}");
                 MessageBox.Show($"An unexpected error occurred during the {testType} test: {ex.Message}", "Benchmark Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Si une exception se produit, tu peux aussi horodater l'erreur si besoin.
+                // result.Timestamp = DateTime.Now;
             }
             return result;
         }
@@ -744,6 +786,7 @@ EXIT
                             BenchmarkDisplayConstants.CPU_SCORE_AVERAGE_THRESHOLD);
                     }
                     _benchmarkResults.Add(cpuResult);
+                    _historyManager.AddResult(cpuResult);
                 }
                 else
                 {
@@ -774,6 +817,7 @@ EXIT
                                         BenchmarkDisplayConstants.RAM_SCORE_AVERAGE_THRESHOLD);
                     }
                     _benchmarkResults.Add(ramResult);
+                    _historyManager.AddResult(ramResult);
                 }
                 else
                 {
@@ -815,6 +859,7 @@ EXIT
                                               BenchmarkDisplayConstants.SSD_SCORE_AVERAGE_THRESHOLD);
                         }
                         _benchmarkResults.Add(ssdResult);
+                        _historyManager.AddResult(ssdResult);
                         progressForm.Close();
                     }
                 }
@@ -857,6 +902,7 @@ EXIT
                                       BenchmarkDisplayConstants.GPU_SCORE_AVERAGE_THRESHOLD);
                 }
                 _benchmarkResults.Add(gpuResult);
+                _historyManager.AddResult(gpuResult);
                 progressForm.Close();
             }
         }
@@ -974,6 +1020,7 @@ EXIT
                                 BenchmarkDisplayConstants.CPU_SCORE_GOOD_THRESHOLD,
                                 BenchmarkDisplayConstants.CPU_SCORE_AVERAGE_THRESHOLD);
                         }
+                        _historyManager.AddResult(result);
                         break;
                     case "SSD":
                         lblSsdResult.Text = $"SSD Test: {result.Score} ({result.DetailedResult})";
@@ -983,6 +1030,7 @@ EXIT
                                               BenchmarkDisplayConstants.SSD_SCORE_GOOD_THRESHOLD,
                                               BenchmarkDisplayConstants.SSD_SCORE_AVERAGE_THRESHOLD);
                         }
+                        _historyManager.AddResult(result);
                         break;
                     case "RAM":
                         lblRamResult.Text = $"RAM Test: {result.Score} ({result.DetailedResult})";
@@ -992,6 +1040,7 @@ EXIT
                                               BenchmarkDisplayConstants.RAM_SCORE_GOOD_THRESHOLD,
                                               BenchmarkDisplayConstants.RAM_SCORE_AVERAGE_THRESHOLD);
                         }
+                        _historyManager.AddResult(result);
                         break;
                     case "GPU":
                         lblGpuResult.Text = $"GPU Test: {result.Score} ({result.DetailedResult})";
@@ -1001,6 +1050,7 @@ EXIT
                                               BenchmarkDisplayConstants.GPU_SCORE_GOOD_THRESHOLD,
                                               BenchmarkDisplayConstants.GPU_SCORE_AVERAGE_THRESHOLD);
                         }
+                        _historyManager.AddResult(result);
                         break;
                 }
                 _benchmarkResults.Add(result);

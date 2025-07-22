@@ -44,3 +44,5 @@ C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Release\n
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Release\net9.0-windows7.0\UltraBench.pdb
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Release\net9.0-windows7.0\UltraBench.genruntimeconfig.cache
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Release\net9.0-windows7.0\ref\UltraBench.dll
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Release\net9.0-windows7.0\UltraBench.HistoryForm.resources
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Release\net9.0-windows7.0\UltraBench.sourcelink.json

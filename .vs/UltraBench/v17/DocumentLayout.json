@@ -3,36 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\historyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:historyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\historyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:historyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\formscorehelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:formscorehelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\progressform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:progressform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\historyform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:historyform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\formscorehelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:formscorehelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\progressform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:progressform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\progressform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:progressform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\progressform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:progressform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\testinprogressform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:testinprogressform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\testinprogressform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:testinprogressform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\form1.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:form1.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\benchmarkhistorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:benchmarkhistorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\benchmarkresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:benchmarkresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\applocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:applocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\ultrabench.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:ultrabench.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\ultrabench.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
@@ -43,28 +75,28 @@
       "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:tools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\applocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:applocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\testinprogressform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:testinprogressform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\properties\\publishprofiles\\folderprofile.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:properties\\publishprofiles\\folderprofile.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\testinprogressform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:testinprogressform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\ultrabench.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:ultrabench.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\progressform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:progressform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\pdfreportgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:pdfreportgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\formscorehelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:formscorehelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|c:\\users\\fpiscia\\synologydrive\\documents\\developpements\\ultrabench\\properties\\publishprofiles\\folderprofile.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{5CD5B6D9-9A04-4FD1-A2CE-A376928EBCF3}|UltraBench.csproj|solutionrelative:properties\\publishprofiles\\folderprofile.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,7 +106,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,7 +114,108 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "HistoryForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\HistoryForm.Designer.cs",
+              "RelativeDocumentMoniker": "HistoryForm.Designer.cs",
+              "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\HistoryForm.Designer.cs",
+              "RelativeToolTip": "HistoryForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T07:47:33.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormScoreHelp.cs [Cr\u00E9ation - anglais]",
+              "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\FormScoreHelp.cs",
+              "RelativeDocumentMoniker": "FormScoreHelp.cs",
+              "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\FormScoreHelp.cs [Cr\u00E9ation - anglais]",
+              "RelativeToolTip": "FormScoreHelp.cs [Cr\u00E9ation - anglais]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T05:33:11.463Z",
+              "EditorCaption": " [Cr\u00E9ation - anglais]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T05:14:44.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form1.resx",
+              "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Form1.resx",
+              "RelativeDocumentMoniker": "Form1.resx",
+              "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Form1.resx",
+              "RelativeToolTip": "Form1.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-07-22T04:30:47.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HistoryForm.cs",
+              "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\HistoryForm.cs",
+              "RelativeDocumentMoniker": "HistoryForm.cs",
+              "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\HistoryForm.cs",
+              "RelativeToolTip": "HistoryForm.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T22:19:59.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HistoryForm.cs [Cr\u00E9ation - anglais]",
+              "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\HistoryForm.cs",
+              "RelativeDocumentMoniker": "HistoryForm.cs",
+              "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\HistoryForm.cs [Cr\u00E9ation - anglais]",
+              "RelativeToolTip": "HistoryForm.cs [Cr\u00E9ation - anglais]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T22:16:33.973Z",
+              "EditorCaption": " [Cr\u00E9ation - anglais]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BenchmarkResult.cs",
+              "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\BenchmarkResult.cs",
+              "RelativeDocumentMoniker": "BenchmarkResult.cs",
+              "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\BenchmarkResult.cs",
+              "RelativeToolTip": "BenchmarkResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T21:45:18.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BenchmarkHistoryManager.cs",
+              "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\BenchmarkHistoryManager.cs",
+              "RelativeDocumentMoniker": "BenchmarkHistoryManager.cs",
+              "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\BenchmarkHistoryManager.cs",
+              "RelativeToolTip": "BenchmarkHistoryManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T21:05:01.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "ProgressForm.cs",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\ProgressForm.cs",
               "RelativeDocumentMoniker": "ProgressForm.cs",
@@ -95,18 +228,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProgressForm.cs [Conception]",
+              "DocumentIndex": 6,
+              "Title": "ProgressForm.cs [Cr\u00E9ation - anglais]",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\ProgressForm.cs",
               "RelativeDocumentMoniker": "ProgressForm.cs",
-              "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\ProgressForm.cs [Conception]",
-              "RelativeToolTip": "ProgressForm.cs [Conception]",
+              "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\ProgressForm.cs [Cr\u00E9ation - anglais]",
+              "RelativeToolTip": "ProgressForm.cs [Cr\u00E9ation - anglais]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T08:52:01.775Z"
+              "WhenOpened": "2025-07-21T08:52:01.775Z",
+              "EditorCaption": " [Cr\u00E9ation - anglais]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 23,
               "Title": "FolderProfile.pubxml",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Properties\\PublishProfiles\\FolderProfile.pubxml",
               "RelativeDocumentMoniker": "Properties\\PublishProfiles\\FolderProfile.pubxml",
@@ -114,11 +248,12 @@
               "RelativeToolTip": "Properties\\PublishProfiles\\FolderProfile.pubxml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-07-14T21:41:39.992Z"
+              "WhenOpened": "2025-07-14T21:41:39.992Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "UltraBench.csproj",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
               "RelativeDocumentMoniker": "UltraBench.csproj",
@@ -126,22 +261,24 @@
               "RelativeToolTip": "UltraBench.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-14T21:20:14.829Z"
+              "WhenOpened": "2025-07-14T21:20:14.829Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
               "Title": "UltraBench",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
               "RelativeDocumentMoniker": "UltraBench.csproj",
               "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\UltraBench.csproj",
               "RelativeToolTip": "UltraBench.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-14T21:10:30.113Z"
+              "WhenOpened": "2025-07-14T21:10:30.113Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 20,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\README.md",
               "RelativeDocumentMoniker": "README.md",
@@ -154,43 +291,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 5,
               "Title": "FormScoreHelp.cs",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\FormScoreHelp.cs",
               "RelativeDocumentMoniker": "FormScoreHelp.cs",
               "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\FormScoreHelp.cs",
               "RelativeToolTip": "FormScoreHelp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T21:18:27.235Z"
+              "WhenOpened": "2025-07-12T21:18:27.235Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "Tools.cs",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Tools.cs",
               "RelativeDocumentMoniker": "Tools.cs",
               "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Tools.cs",
               "RelativeToolTip": "Tools.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACUAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T16:21:49.19Z"
+              "WhenOpened": "2025-07-12T16:21:49.19Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "AppLocator.cs",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\AppLocator.cs",
               "RelativeDocumentMoniker": "AppLocator.cs",
               "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\AppLocator.cs",
               "RelativeToolTip": "AppLocator.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T15:11:53.983Z"
+              "WhenOpened": "2025-07-12T15:11:53.983Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 18,
               "Title": "TestInProgressForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\TestInProgressForm.Designer.cs",
               "RelativeDocumentMoniker": "TestInProgressForm.Designer.cs",
@@ -198,11 +338,12 @@
               "RelativeToolTip": "TestInProgressForm.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T22:26:26.557Z"
+              "WhenOpened": "2025-07-11T22:26:26.557Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 19,
               "Title": "TestInProgressForm.cs",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\TestInProgressForm.cs",
               "RelativeDocumentMoniker": "TestInProgressForm.cs",
@@ -210,24 +351,25 @@
               "RelativeToolTip": "TestInProgressForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T22:25:26.287Z"
+              "WhenOpened": "2025-07-11T22:25:26.287Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 8,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
               "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Form1.Designer.cs",
               "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-11T20:16:14.014Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ProgressForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\ProgressForm.Designer.cs",
               "RelativeDocumentMoniker": "ProgressForm.Designer.cs",
@@ -235,11 +377,12 @@
               "RelativeToolTip": "ProgressForm.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T19:38:43.369Z"
+              "WhenOpened": "2025-07-20T19:38:43.369Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "PdfReportGenerator.cs",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\PdfReportGenerator.cs",
               "RelativeDocumentMoniker": "PdfReportGenerator.cs",
@@ -252,28 +395,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 11,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABABAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAjwBoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-11T16:23:31.439Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.cs [Conception]",
+              "DocumentIndex": 9,
+              "Title": "Form1.cs [Cr\u00E9ation - anglais]",
               "DocumentMoniker": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Form1.cs [Conception]",
-              "RelativeToolTip": "Form1.cs [Conception]",
+              "ToolTip": "C:\\Users\\fpiscia\\SynologyDrive\\Documents\\Developpements\\UltraBench\\Form1.cs [Cr\u00E9ation - anglais]",
+              "RelativeToolTip": "Form1.cs [Cr\u00E9ation - anglais]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-20T16:05:33.345Z",
-              "EditorCaption": " [Conception]"
+              "EditorCaption": " [Cr\u00E9ation - anglais]"
             }
           ]
         }

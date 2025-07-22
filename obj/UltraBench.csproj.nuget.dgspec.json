@@ -57,10 +57,20 @@
           "dependencies": {
             "HtmlAgilityPack": {
               "target": "Package",
-              "version": "[1.12.1, )",
+              "version": "[1.12.2, )",
+              "versionCentrallyManaged": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )",
               "versionCentrallyManaged": true
             },
             "System.Management": {
+              "target": "Package",
+              "version": "[9.0.7, )",
+              "versionCentrallyManaged": true
+            },
+            "System.Text.Json": {
               "target": "Package",
               "version": "[9.0.7, )",
               "versionCentrallyManaged": true
@@ -77,10 +87,12 @@
             }
           },
           "centralPackageVersions": {
-            "HtmlAgilityPack": "1.12.1",
+            "HtmlAgilityPack": "1.12.2",
             "itext": "9.2.0",
             "itext.bouncy-castle-adapter": "9.2.0",
-            "System.Management": "9.0.7"
+            "Newtonsoft.Json": "13.0.3",
+            "System.Management": "9.0.7",
+            "System.Text.Json": "9.0.7"
           },
           "imports": [
             "net461",

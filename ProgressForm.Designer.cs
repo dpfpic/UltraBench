@@ -35,44 +35,33 @@ namespace UltraBench
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProgressForm));
             progressBar1 = new System.Windows.Forms.ProgressBar();
             lblProgressText = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
             // progressBar1
             // 
-            progressBar1.Location = new System.Drawing.Point(26, 79);
-            progressBar1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            resources.ApplyResources(progressBar1, "progressBar1");
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new System.Drawing.Size(480, 39);
             progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            progressBar1.TabIndex = 0;
             // 
             // lblProgressText
             // 
-            lblProgressText.Location = new System.Drawing.Point(26, 22);
-            lblProgressText.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            resources.ApplyResources(lblProgressText, "lblProgressText");
             lblProgressText.Name = "lblProgressText";
-            lblProgressText.Size = new System.Drawing.Size(480, 31);
-            lblProgressText.TabIndex = 1;
-            lblProgressText.Text = "Preparing for the test...";
-            lblProgressText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ProgressForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(546, 201);
             ControlBox = false;
             Controls.Add(lblProgressText);
             Controls.Add(progressBar1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "ProgressForm";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "Test Progress";
             ResumeLayout(false);
 
         }

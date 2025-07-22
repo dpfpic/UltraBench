@@ -5,6 +5,8 @@
 // Licensed under the MIT License
 //*********************************************
 
+using System;
+
 namespace UltraBench // Ensure this is the same namespace as your Form1
 {
     public class BenchmarkResult
@@ -15,5 +17,7 @@ namespace UltraBench // Ensure this is the same namespace as your Form1
         public long ActualDurationMs { get; set; } // Actual test duration in milliseconds
         public bool Success { get; set; } = true;  // Indicates if the test was successful (defaults to true)
         public string TestedDrive { get; set; }    // Specific to SSD benchmark (e.g., "C:\")
+
+        public DateTime Timestamp { get; set; }
     }
 }

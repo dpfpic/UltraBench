@@ -118,6 +118,380 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnLaunchHWMonitor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 117</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnLaunchHWMonitor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 33, 5, 4</value>
+  </data>
+  <data name="btnLaunchHWMonitor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 47</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnLaunchHWMonitor.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnLaunchHWMonitor.Text" xml:space="preserve">
+    <value>Launch HWMonitor</value>
+  </data>
+  <data name="&gt;&gt;btnLaunchHWMonitor.Name" xml:space="preserve">
+    <value>btnLaunchHWMonitor</value>
+  </data>
+  <data name="&gt;&gt;btnLaunchHWMonitor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLaunchHWMonitor.Parent" xml:space="preserve">
+    <value>flowLayoutPanelTests</value>
+  </data>
+  <data name="&gt;&gt;btnLaunchHWMonitor.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnOpenReports.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 201</value>
+  </data>
+  <data name="btnOpenReports.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 33, 5, 4</value>
+  </data>
+  <data name="btnOpenReports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 47</value>
+  </data>
+  <data name="btnOpenReports.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnOpenReports.Text" xml:space="preserve">
+    <value>Open Reports Folder</value>
+  </data>
+  <data name="&gt;&gt;btnOpenReports.Name" xml:space="preserve">
+    <value>btnOpenReports</value>
+  </data>
+  <data name="&gt;&gt;btnOpenReports.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOpenReports.Parent" xml:space="preserve">
+    <value>flowLayoutPanelTests</value>
+  </data>
+  <data name="&gt;&gt;btnOpenReports.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>624, 829</value>
+  </data>
+  <data name="btnClose.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 47</value>
+  </data>
+  <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="&gt;&gt;btnClose.Name" xml:space="preserve">
+    <value>btnClose</value>
+  </data>
+  <data name="&gt;&gt;btnClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnClose.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="lblCpuInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCpuInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 79</value>
+  </data>
+  <data name="lblCpuInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="lblCpuInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="lblCpuInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblCpuInfo.Text" xml:space="preserve">
+    <value>Processor:</value>
+  </data>
+  <data name="&gt;&gt;lblCpuInfo.Name" xml:space="preserve">
+    <value>lblCpuInfo</value>
+  </data>
+  <data name="&gt;&gt;lblCpuInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCpuInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblCpuInfo.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="lblRamInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRamInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 111</value>
+  </data>
+  <data name="lblRamInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="lblRamInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="lblRamInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblRamInfo.Text" xml:space="preserve">
+    <value>RAM:</value>
+  </data>
+  <data name="&gt;&gt;lblRamInfo.Name" xml:space="preserve">
+    <value>lblRamInfo</value>
+  </data>
+  <data name="&gt;&gt;lblRamInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRamInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblRamInfo.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="lblGpuInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGpuInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 143</value>
+  </data>
+  <data name="lblGpuInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="lblGpuInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 20</value>
+  </data>
+  <data name="lblGpuInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblGpuInfo.Text" xml:space="preserve">
+    <value>Graphics Card:</value>
+  </data>
+  <data name="&gt;&gt;lblGpuInfo.Name" xml:space="preserve">
+    <value>lblGpuInfo</value>
+  </data>
+  <data name="&gt;&gt;lblGpuInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGpuInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblGpuInfo.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="Title_Info.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Title_Info.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="Title_Info.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 25</value>
+  </data>
+  <data name="Title_Info.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="Title_Info.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 28</value>
+  </data>
+  <data name="Title_Info.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Title_Info.Text" xml:space="preserve">
+    <value>System Information</value>
+  </data>
+  <data name="&gt;&gt;Title_Info.Name" xml:space="preserve">
+    <value>Title_Info</value>
+  </data>
+  <data name="&gt;&gt;Title_Info.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Title_Info.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Title_Info.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="versionLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="versionLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="versionLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 867</value>
+  </data>
+  <data name="versionLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="versionLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="versionLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="versionLabel.Text" xml:space="preserve">
+    <value>Version: </value>
+  </data>
+  <data name="&gt;&gt;versionLabel.Name" xml:space="preserve">
+    <value>versionLabel</value>
+  </data>
+  <data name="&gt;&gt;versionLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;versionLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;versionLabel.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="btnTestCPU.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 579</value>
+  </data>
+  <data name="btnTestCPU.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="btnTestCPU.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 47</value>
+  </data>
+  <data name="btnTestCPU.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnTestCPU.Text" xml:space="preserve">
+    <value>CPU Test</value>
+  </data>
+  <data name="&gt;&gt;btnTestCPU.Name" xml:space="preserve">
+    <value>btnTestCPU</value>
+  </data>
+  <data name="&gt;&gt;btnTestCPU.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTestCPU.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnTestCPU.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnTestGPU.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 33</value>
+  </data>
+  <data name="btnTestGPU.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 33, 5, 4</value>
+  </data>
+  <data name="btnTestGPU.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 47</value>
+  </data>
+  <data name="btnTestGPU.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnTestGPU.Text" xml:space="preserve">
+    <value>GPU Test</value>
+  </data>
+  <data name="&gt;&gt;btnTestGPU.Name" xml:space="preserve">
+    <value>btnTestGPU</value>
+  </data>
+  <data name="&gt;&gt;btnTestGPU.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTestGPU.Parent" xml:space="preserve">
+    <value>flowLayoutPanelTests</value>
+  </data>
+  <data name="&gt;&gt;btnTestGPU.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnTestSSD.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 747</value>
+  </data>
+  <data name="btnTestSSD.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="btnTestSSD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 47</value>
+  </data>
+  <data name="btnTestSSD.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnTestSSD.Text" xml:space="preserve">
+    <value>SSD/HDD Test</value>
+  </data>
+  <data name="&gt;&gt;btnTestSSD.Name" xml:space="preserve">
+    <value>btnTestSSD</value>
+  </data>
+  <data name="&gt;&gt;btnTestSSD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTestSSD.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnTestSSD.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnTestRAM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 663</value>
+  </data>
+  <data name="btnTestRAM.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="btnTestRAM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 47</value>
+  </data>
+  <data name="btnTestRAM.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnTestRAM.Text" xml:space="preserve">
+    <value>RAM Test</value>
+  </data>
+  <data name="&gt;&gt;btnTestRAM.Name" xml:space="preserve">
+    <value>btnTestRAM</value>
+  </data>
+  <data name="&gt;&gt;btnTestRAM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTestRAM.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnTestRAM.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnFullStress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>624, 663</value>
+  </data>
+  <data name="btnFullStress.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="btnFullStress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 47</value>
+  </data>
+  <data name="btnFullStress.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnFullStress.Text" xml:space="preserve">
+    <value>Full Stress Test</value>
+  </data>
+  <data name="&gt;&gt;btnFullStress.Name" xml:space="preserve">
+    <value>btnFullStress</value>
+  </data>
+  <data name="&gt;&gt;btnFullStress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFullStress.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnFullStress.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="logo_UlraBench.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
@@ -224,6 +598,388 @@
         LluHeOU4Cq0/PiLENBAziB3EUN0tvUT/Dx7TDukXlJFzAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="logo_UlraBench.Location" type="System.Drawing.Point, System.Drawing">
+    <value>696, 41</value>
+  </data>
+  <data name="logo_UlraBench.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="logo_UlraBench.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 177</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="logo_UlraBench.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="logo_UlraBench.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;logo_UlraBench.Name" xml:space="preserve">
+    <value>logo_UlraBench</value>
+  </data>
+  <data name="&gt;&gt;logo_UlraBench.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logo_UlraBench.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;logo_UlraBench.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="Title_Test.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Title_Test.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="Title_Test.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 520</value>
+  </data>
+  <data name="Title_Test.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="Title_Test.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 28</value>
+  </data>
+  <data name="Title_Test.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="Title_Test.Text" xml:space="preserve">
+    <value>Start Test Here</value>
+  </data>
+  <data name="&gt;&gt;Title_Test.Name" xml:space="preserve">
+    <value>Title_Test</value>
+  </data>
+  <data name="&gt;&gt;Title_Test.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Title_Test.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Title_Test.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="Title_Bench.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Title_Bench.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="Title_Bench.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 220</value>
+  </data>
+  <data name="Title_Bench.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="Title_Bench.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 28</value>
+  </data>
+  <data name="Title_Bench.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="Title_Bench.Text" xml:space="preserve">
+    <value>Benchmark Results</value>
+  </data>
+  <data name="&gt;&gt;Title_Bench.Name" xml:space="preserve">
+    <value>Title_Bench</value>
+  </data>
+  <data name="&gt;&gt;Title_Bench.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Title_Bench.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Title_Bench.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="Separator_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 480</value>
+  </data>
+  <data name="Separator_2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="Separator_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>858, 4</value>
+  </data>
+  <data name="Separator_2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;Separator_2.Name" xml:space="preserve">
+    <value>Separator_2</value>
+  </data>
+  <data name="&gt;&gt;Separator_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Separator_2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Separator_2.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="Separator_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 195</value>
+  </data>
+  <data name="Separator_1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="Separator_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>549, 4</value>
+  </data>
+  <data name="Separator_1.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;Separator_1.Name" xml:space="preserve">
+    <value>Separator_1</value>
+  </data>
+  <data name="&gt;&gt;Separator_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Separator_1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Separator_1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lblCpuResult.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCpuResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 272</value>
+  </data>
+  <data name="lblCpuResult.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="lblCpuResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 20</value>
+  </data>
+  <data name="lblCpuResult.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="lblCpuResult.Text" xml:space="preserve">
+    <value>CPU Test: Not Executed</value>
+  </data>
+  <data name="&gt;&gt;lblCpuResult.Name" xml:space="preserve">
+    <value>lblCpuResult</value>
+  </data>
+  <data name="&gt;&gt;lblCpuResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCpuResult.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblCpuResult.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="lblRamResult.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRamResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 320</value>
+  </data>
+  <data name="lblRamResult.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="lblRamResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 20</value>
+  </data>
+  <data name="lblRamResult.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblRamResult.Text" xml:space="preserve">
+    <value>RAM Test: Not Executed</value>
+  </data>
+  <data name="&gt;&gt;lblRamResult.Name" xml:space="preserve">
+    <value>lblRamResult</value>
+  </data>
+  <data name="&gt;&gt;lblRamResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRamResult.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblRamResult.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblSsdResult.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSsdResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 369</value>
+  </data>
+  <data name="lblSsdResult.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="lblSsdResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 20</value>
+  </data>
+  <data name="lblSsdResult.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="lblSsdResult.Text" xml:space="preserve">
+    <value>SSD Test: Not Executed</value>
+  </data>
+  <data name="&gt;&gt;lblSsdResult.Name" xml:space="preserve">
+    <value>lblSsdResult</value>
+  </data>
+  <data name="&gt;&gt;lblSsdResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSsdResult.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblSsdResult.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblGpuResult.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGpuResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 420</value>
+  </data>
+  <data name="lblGpuResult.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="lblGpuResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 20</value>
+  </data>
+  <data name="lblGpuResult.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="lblGpuResult.Text" xml:space="preserve">
+    <value>GPU Test: Not Executed</value>
+  </data>
+  <data name="&gt;&gt;lblGpuResult.Name" xml:space="preserve">
+    <value>lblGpuResult</value>
+  </data>
+  <data name="&gt;&gt;lblGpuResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGpuResult.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblGpuResult.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="deveTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="deveTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 867</value>
+  </data>
+  <data name="deveTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 20</value>
+  </data>
+  <data name="deveTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="deveTitle.Text" xml:space="preserve">
+    <value>Developed by Dpfpic (Fabrice Piscia)</value>
+  </data>
+  <data name="&gt;&gt;deveTitle.Name" xml:space="preserve">
+    <value>deveTitle</value>
+  </data>
+  <data name="&gt;&gt;deveTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deveTitle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;deveTitle.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="flowLayoutPanelTests.Location" type="System.Drawing.Point, System.Drawing">
+    <value>318, 545</value>
+  </data>
+  <data name="flowLayoutPanelTests.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="flowLayoutPanelTests.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 261</value>
+  </data>
+  <data name="flowLayoutPanelTests.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelTests.Name" xml:space="preserve">
+    <value>flowLayoutPanelTests</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelTests.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelTests.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelTests.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Separator_3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="Separator_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 901</value>
+  </data>
+  <data name="Separator_3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="Separator_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>858, 4</value>
+  </data>
+  <data name="Separator_3.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;Separator_3.Name" xml:space="preserve">
+    <value>Separator_3</value>
+  </data>
+  <data name="&gt;&gt;Separator_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Separator_3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Separator_3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnShowHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>624, 747</value>
+  </data>
+  <data name="btnShowHistory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="btnShowHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 47</value>
+  </data>
+  <data name="btnShowHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="btnShowHistory.Text" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="&gt;&gt;btnShowHistory.Name" xml:space="preserve">
+    <value>btnShowHistory</value>
+  </data>
+  <data name="&gt;&gt;btnShowHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnShowHistory.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnShowHistory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>en</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>922, 908</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAFgAAABYAAAAAAAAAAAA
@@ -299,5 +1055,17 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>UltraBench by Dpfpic</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

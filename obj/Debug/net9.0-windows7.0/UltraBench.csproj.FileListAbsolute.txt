@@ -44,3 +44,12 @@ C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net9.0-windows7.0\UltraBench.pdb
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net9.0-windows7.0\UltraBench.genruntimeconfig.cache
 C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net9.0-windows7.0\ref\UltraBench.dll
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net9.0-windows7.0\UltraBench.sourcelink.json
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net9.0-windows7.0\UltraBench.HistoryForm.resources
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\bin\Debug\net9.0-windows7.0\en\UltraBench.resources.dll
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net9.0-windows7.0\UltraBench.Form1.en.resources
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net9.0-windows7.0\en\UltraBench.resources.dll
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net9.0-windows7.0\UltraBench.HistoryForm.en.resources
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net9.0-windows7.0\UltraBench.ProgressForm.en.resources
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net9.0-windows7.0\UltraBench.FormScoreHelp.resources
+C:\Users\fpiscia\SynologyDrive\Documents\Developpements\UltraBench\obj\Debug\net9.0-windows7.0\UltraBench.FormScoreHelp.en.resources
