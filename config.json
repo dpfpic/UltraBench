@@ -1,0 +1,24 @@
+{
+  "BenchmarkThresholds": {
+    "CpuScoreGood": 1000.0,
+    "CpuScoreAverage": 500.0,
+    "RamScoreGood": 2000.0,
+    "RamScoreAverage": 1000.0,
+    "SsdScoreGood": 500.0,
+    "SsdScoreAverage": 200.0,
+    "GpuScoreGood": 500.0,
+    "GpuScoreAverage": 300.0
+  },
+  "ColorThresholds": {
+    "GoodResult": "Green",
+    "AverageResult": "Orange",
+    "BadResult": "Red",
+    "NotExecuted": "Gray"
+  },
+  "MaximumPossibleScores": {
+    "CpuScoreMax": 2000000.0,
+    "RamScoreMax": 4000.0,
+    "SsdScoreMax": 1000.0,
+    "GpuScoreMax": 1000.0
+  }
+}

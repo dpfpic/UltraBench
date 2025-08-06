@@ -1,116 +1,216 @@
-﻿//*********************************************
+//*********************************************
 // UltraBench Ver:1.0.0
 // Created by Dpfpic (Fabrice Piscia)
 // Site : https://github.com/dpfpic/UltraBench
 // Licensed under the MIT License
 //*********************************************
 
-using System.Windows.Forms;
-using System.Collections.Generic; // For List<BenchmarkResult>
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace UltraBench
 {
     public partial class HistoryForm : Form
     {
-        private BenchmarkHistoryManager _historyManager;
+        private readonly BenchmarkHistoryManager _historyManager;
 
-        // Constructor that takes the history manager
         public HistoryForm(BenchmarkHistoryManager historyManager)
         {
             InitializeComponent();
             _historyManager = historyManager;
-            LoadHistoryData(); // Call this method to load and display data
+            this.Load += HistoryForm_Load;
+            this.dgvHistory.CellFormatting += new DataGridViewCellFormattingEventHandler(this.dgvHistory_CellFormatting);
+        }
+
+        private void HistoryForm_Load(object sender, System.EventArgs e)
+        {
+            LoadHistoryData();
         }
 
         private void LoadHistoryData()
         {
-            // Retrieve the history from the manager
-            List<BenchmarkResult> history = _historyManager.GetHistory();
+            List<BenchmarkResult> history = _historyManager.GetHistory().OrderByDescending(r => r.Timestamp).ToList();
 
-            // Bind the data to the DataGridView
-            // This will automatically create columns based on public properties of BenchmarkResult
+            dgvHistory.AutoGenerateColumns = false;
+            dgvHistory.Columns.Clear();
+            dgvHistory.Rows.Clear();
+            dgvHistory.DataSource = null;
+
+            // Column: Date & Time
+            dgvHistory.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Timestamp",
+                HeaderText = "Date & Time", // Renamed for simplicity
+                DefaultCellStyle = { Format = "yyyy-MM-dd HH:mm:ss", Alignment = DataGridViewContentAlignment.MiddleLeft },
+                Width = 115,
+                Resizable = DataGridViewTriState.False
+            });
+
+            // Column: Configuration
+            dgvHistory.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "SystemConfiguration",
+                HeaderText = "Configuration", // Renamed for simplicity
+                                              // On revient au mode AllCells pour que le texte soit toujours enti�rement visible.
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            });
+
+            // Column: Test Type
+            dgvHistory.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Title",
+                HeaderText = "Test Type", // Renamed for simplicity
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter },
+                Width = 40,
+                Resizable = DataGridViewTriState.False
+            });
+
+            // Column: Score
+            dgvHistory.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "Score",
+                HeaderText = "Score", // Renamed for simplicity
+                Name = "ScoreColumn", // Added a name for easier reference
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleRight },
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            });
+
+            // Column: Detailed Result
+            dgvHistory.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "DetailedResult",
+                HeaderText = "Detailed Result",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                // On d�finit une largeur minimale pour cette colonne
+                MinimumWidth = 200,
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleLeft, WrapMode = DataGridViewTriState.False }
+            });
+
+            // Column: Duration (ms)
+            dgvHistory.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                DataPropertyName = "ActualDurationMs",
+                HeaderText = "Duration (ms)", // Renamed for simplicity
+                Name = "DurationColumn", // Added a name for easier reference
+                DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleRight },
+                Width = 50,
+                Resizable = DataGridViewTriState.False
+            });
+
+            // Column: Success
+            dgvHistory.Columns.Add(new DataGridViewCheckBoxColumn()
+            {
+                DataPropertyName = "Success",
+                HeaderText = "Success", // Renamed for simplicity
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            });
+
             dgvHistory.DataSource = history;
 
-            // Optional: Customize DataGridView columns for better display
-            // (e.g., format Timestamp, hide certain columns)
-            if (dgvHistory.Columns.Contains("Timestamp"))
-            {
-                dgvHistory.Columns["Timestamp"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
-                dgvHistory.Columns["Timestamp"].HeaderText = "Date & Time"; // Renomme l'en-tête
-            }
-            if (dgvHistory.Columns.Contains("DetailedResult"))
-            {
-                dgvHistory.Columns["DetailedResult"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            }
-            // Example of hiding a column if you don't want to show it:
-            // if (dgvHistory.Columns.Contains("ActualDurationMs"))
-            // {
-            //     dgvHistory.Columns["ActualDurationMs"].Visible = false;
-            // }
-            if (dgvHistory.Columns.Contains("Score"))
-            {
-                dgvHistory.Columns["Score"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            }
-            if (dgvHistory.Columns.Contains("ActualDurationMs"))
-            {
-                dgvHistory.Columns["ActualDurationMs"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            }
+            AdjustFormSizeToContent();
+        }
 
-            // Pour s'assurer que toutes les colonnes remplissent bien l'espace
-            dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            // Ou si tu préfères que les colonnes s'ajustent à leur contenu et le reste se remplit
-            // dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            // dgvHistory.Columns["DetailedResult"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; // Pour que les détails prennent le reste
+        private void AdjustFormSizeToContent()
+        {
+            dgvHistory.Dock = DockStyle.Fill;
+            int newWidth = dgvHistory.RowHeadersWidth + 10;
+            foreach (DataGridViewColumn col in dgvHistory.Columns)
+            {
+                newWidth += col.Width;
+            }
+            this.ClientSize = new Size(newWidth, this.ClientSize.Height);
+
+            this.ClientSize = new Size(newWidth + SystemInformation.VerticalScrollBarWidth, this.ClientSize.Height);
         }
 
         private void dgvHistory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // Ensure the current column is "Score" and the value is not null.
-            // This prevents errors and applies formatting only to the relevant column.
-            if (dgvHistory.Columns[e.ColumnIndex].Name == "Score" && e.Value != null)
+            // First, reset the cell's style to its default.
+            // This is crucial to prevent colors from carrying over to other rows.
+            if (e.RowIndex % 2 == 0)
             {
-                // Attempt to parse the cell's value to a double to enable numerical comparison.
-                if (double.TryParse(e.Value.ToString(), out double score))
-                {
-                    // Define your score thresholds here. Adjust these values as needed
-                    // to reflect what you consider "good", "medium", or "needs improvement" for UltraBench.
-                    if (score >= 800) // Excellent score
-                    {
-                        e.CellStyle.BackColor = Color.LightGreen; // Light green background
-                        e.CellStyle.ForeColor = Color.DarkGreen;  // Dark green text
-                    }
-                    else if (score >= 500) // Good / Medium score
-                    {
-                        e.CellStyle.BackColor = Color.LightYellow; // Light yellow background
-                        e.CellStyle.ForeColor = Color.DarkGoldenrod; // Dark goldenrod text
-                    }
-                    else // Score needs improvement
-                    {
-                        e.CellStyle.BackColor = Color.LightCoral;  // Light red background
-                        e.CellStyle.ForeColor = Color.DarkRed;    // Dark red text
-                    }
-                }
+                e.CellStyle.BackColor = dgvHistory.DefaultCellStyle.BackColor;
+                e.CellStyle.ForeColor = dgvHistory.DefaultCellStyle.ForeColor;
+            }
+            else
+            {
+                e.CellStyle.BackColor = dgvHistory.AlternatingRowsDefaultCellStyle.BackColor;
+                e.CellStyle.ForeColor = dgvHistory.AlternatingRowsDefaultCellStyle.ForeColor;
             }
 
-            // You can add similar logic for other numerical columns, like "ActualDurationMs".
-            // For duration, typically a lower number is better.
-            if (dgvHistory.Columns[e.ColumnIndex].Name == "ActualDurationMs" && e.Value != null)
+            // Now, apply the custom formatting logic for the "ScoreColumn".
+            if (dgvHistory.Columns[e.ColumnIndex].Name == "ScoreColumn" && e.Value != null)
             {
-                if (double.TryParse(e.Value.ToString(), out double duration))
+                if (double.TryParse(e.Value.ToString(), out double score))
                 {
-                    // Example: Very low duration is excellent
-                    if (duration <= 50)
+                    // Use the score thresholds from the config file
+                    if (score >= ConfigManager.Config.BenchmarkThresholds.CpuScoreGood) // We're using CPU as a placeholder
                     {
-                        e.CellStyle.BackColor = Color.LightGreen;
+                        e.CellStyle.BackColor = ConfigManager.GetColor(ConfigManager.Config.ColorThresholds.GoodResult);
+                        e.CellStyle.ForeColor = Color.White; // Use a light color for better contrast
                     }
-                    else if (duration <= 200)
+                    else if (score >= ConfigManager.Config.BenchmarkThresholds.CpuScoreAverage)
                     {
-                        e.CellStyle.BackColor = Color.LightYellow;
+                        e.CellStyle.BackColor = ConfigManager.GetColor(ConfigManager.Config.ColorThresholds.AverageResult);
+                        e.CellStyle.ForeColor = Color.Black; // Use a dark color for better contrast
                     }
                     else
                     {
-                        e.CellStyle.BackColor = Color.LightCoral;
+                        e.CellStyle.BackColor = ConfigManager.GetColor(ConfigManager.Config.ColorThresholds.BadResult);
+                        e.CellStyle.ForeColor = Color.White; // Use a light color for better contrast
+                    }
+
+                    // Use the score thresholds from the config file
+                    if (score >= ConfigManager.Config.BenchmarkThresholds.RamScoreGood) // We're using RAM as a placeholder
+                    {
+                        e.CellStyle.BackColor = ConfigManager.GetColor(ConfigManager.Config.ColorThresholds.GoodResult);
+                        e.CellStyle.ForeColor = Color.White; // Use a light color for better contrast
+                    }
+                    else if (score >= ConfigManager.Config.BenchmarkThresholds.RamScoreAverage)
+                    {
+                        e.CellStyle.BackColor = ConfigManager.GetColor(ConfigManager.Config.ColorThresholds.AverageResult);
+                        e.CellStyle.ForeColor = Color.Black; // Use a dark color for better contrast
+                    }
+                    else
+                    {
+                        e.CellStyle.BackColor = ConfigManager.GetColor(ConfigManager.Config.ColorThresholds.BadResult);
+                        e.CellStyle.ForeColor = Color.White; // Use a light color for better contrast
+                    }
+
+                    // Use the score thresholds from the config file
+                    if (score >= ConfigManager.Config.BenchmarkThresholds.SsdScoreGood) // We're using SSD as a placeholder
+                    {
+                        e.CellStyle.BackColor = ConfigManager.GetColor(ConfigManager.Config.ColorThresholds.GoodResult);
+                        e.CellStyle.ForeColor = Color.White; // Use a light color for better contrast
+                    }
+                    else if (score >= ConfigManager.Config.BenchmarkThresholds.SsdScoreAverage)
+                    {
+                        e.CellStyle.BackColor = ConfigManager.GetColor(ConfigManager.Config.ColorThresholds.AverageResult);
+                        e.CellStyle.ForeColor = Color.Black; // Use a dark color for better contrast
+                    }
+                    else
+                    {
+                        e.CellStyle.BackColor = ConfigManager.GetColor(ConfigManager.Config.ColorThresholds.BadResult);
+                        e.CellStyle.ForeColor = Color.White; // Use a light color for better contrast
+                    }
+
+                    // Use the score thresholds from the config file
+                    if (score >= ConfigManager.Config.BenchmarkThresholds.GpuScoreGood) // We're using GPU as a placeholder
+                    {
+                        e.CellStyle.BackColor = ConfigManager.GetColor(ConfigManager.Config.ColorThresholds.GoodResult);
+                        e.CellStyle.ForeColor = Color.White; // Use a light color for better contrast
+                    }
+                    else if (score >= ConfigManager.Config.BenchmarkThresholds.GpuScoreAverage)
+                    {
+                        e.CellStyle.BackColor = ConfigManager.GetColor(ConfigManager.Config.ColorThresholds.AverageResult);
+                        e.CellStyle.ForeColor = Color.Black; // Use a dark color for better contrast
+                    }
+                    else
+                    {
+                        e.CellStyle.BackColor = ConfigManager.GetColor(ConfigManager.Config.ColorThresholds.BadResult);
+                        e.CellStyle.ForeColor = Color.White; // Use a light color for better contrast
                     }
                 }
             }

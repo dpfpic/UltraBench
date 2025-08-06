@@ -1,9 +1,14 @@
-//*********************************************
-// UltraBench Ver:1.0.0
-// Created by Dpfpic (Fabrice Piscia)
-// Site : https://github.com/dpfpic/UltraBench
-// Licensed under the MIT License
-//*********************************************
+/**
+* UltraBench – System Benchmark Tool
+ * Version : 1.0.0
+ * Created by Dpfpic (Fabrice Piscia)
+ * Licensed under the MIT License
+ * Repository: https://github.com/dpfpic/UltraBench
+ *
+ * Description:
+ * This file is part of the UltraBench project,
+ * a tool for benchmarking CPU, RAM, SSD and GPU.
+**/
 
 using System;
 using System.Collections.Generic;
@@ -11,7 +16,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.IO.Pipelines;
 using System.Linq;
 using System.Management;
 using System.Security.Principal;
@@ -34,6 +38,55 @@ namespace UltraBench
 
         // Paths of third-party executables
         // private const string PassMarkExePath = @"C:\Program Files\PerformanceTest\PerformanceTest64.exe";
+
+        // This method should be added to your class (e.g., in MainForm.cs)
+        private string GetDriveDetails(string drivePath)
+
+        {
+            try
+            {
+                // Get general info about the drive
+                DriveInfo driveInfo = new DriveInfo(Path.GetPathRoot(drivePath));
+
+                // Get the disk model (more robust version)
+                string diskModel = "Unknown";
+                string driveLetter = Path.GetPathRoot(drivePath).Substring(0, 1);
+
+                // First, find the logical disk (the partition C:)
+                ManagementObjectSearcher logicalDiskSearcher = new ManagementObjectSearcher(
+                    "SELECT * FROM Win32_LogicalDisk WHERE DeviceID = '" + driveLetter + ":'");
+
+                foreach (ManagementObject logicalDisk in logicalDiskSearcher.Get())
+                {
+                    string logicalDeviceId = logicalDisk["DeviceID"].ToString();
+
+                    // Then, find the physical disk associated with this logical disk
+                    ManagementObjectSearcher partitionSearcher = new ManagementObjectSearcher(
+                        "ASSOCIATORS OF {Win32_LogicalDisk.DeviceID='" + logicalDeviceId + "'} WHERE AssocClass = Win32_LogicalDiskToPartition");
+
+                    foreach (ManagementObject partition in partitionSearcher.Get())
+                    {
+                        ManagementObjectSearcher physicalDiskSearcher = new ManagementObjectSearcher(
+                            "ASSOCIATORS OF {Win32_DiskPartition.DeviceID='" + partition["DeviceID"] + "'} WHERE AssocClass = Win32_DiskDriveToDiskPartition");
+
+                        foreach (ManagementObject physicalDisk in physicalDiskSearcher.Get())
+                        {
+                            diskModel = physicalDisk["Model"].ToString();
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                }
+
+                return $"{diskModel} ({driveInfo.Name})";
+            }
+            catch
+            {
+                // Return a generic name if an error occurs
+                return $"Selected Drive ({drivePath})";
+            }
+        }
 
         // Property for HWMonitor path that searches for an installed version
         private string HWMonitorExePath
@@ -76,6 +129,9 @@ namespace UltraBench
             string historyFilePath = Path.Combine(ultraBenchFolderPath, "benchmark_history.json");
             _historyManager = new BenchmarkHistoryManager(historyFilePath);
             // --- Fin de l'initialisation ---
+
+            HistoryForm historyForm = new HistoryForm(_historyManager);
+            //historyForm.ShowDialog();
 
             //LoadBenchmarkSettings(); // Assuming you have this for other settings
             //ApplyBenchmarkSettings();
@@ -172,6 +228,8 @@ namespace UltraBench
             // The FlowLayoutPanel will simply manage its positioning relative to other visible buttons.
         }
 
+
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -206,7 +264,7 @@ namespace UltraBench
                     foreach (ManagementObject system in searcher.Get())
                     {
                         ulong totalMemoryBytes = (ulong)system["TotalPhysicalMemory"];
-                        return $"{(totalMemoryBytes / (1024.0 * 1024.0 * 1024.0)):F2} GB";
+                        return $"{Math.Ceiling((totalMemoryBytes / (1024.0 * 1024.0 * 1024.0))):F2} GB";
                     }
                 }
             }
@@ -249,6 +307,9 @@ namespace UltraBench
             double writeSpeed = 0;
             double readSpeed = 0;
             long totalDuration = 0;
+
+            // Access the maximum score from the configuration manager
+            double SsdScoreMax = ConfigManager.Config.MaximumPossibleScores.SsdScoreMax;
 
             try
             {
@@ -309,7 +370,7 @@ namespace UltraBench
 
                 long score = (long)(((writeSpeed + readSpeed) / 2.0) * BenchmarkSettingsConstants.SsdScoreMultiplier);
 
-                return new BenchmarkResult { Title = "SSD", Score = (int)score, DetailedResult = $"Write: {writeSpeed:F2} MB/s, Read: {readSpeed:F2} MB/s", ActualDurationMs = totalDuration, Success = true, TestedDrive = drivePath };
+                return new BenchmarkResult { Title = "SSD", Score = (int)score, DetailedResult = $"Write: {writeSpeed:F2} MB/s, Read: {readSpeed:F2} MB/s", ActualDurationMs = totalDuration, Success = true, MaximumPossibleScore = SsdScoreMax, TestedDrive = drivePath };
             }
             catch (Exception ex)
             {
@@ -348,8 +409,65 @@ namespace UltraBench
             }
         }
 
+        private string GetSimplifiedSystemConfiguration(string ssdDrivePath)
+        {
+            // Fetches full component names
+            string cpuNameFull = GetProcessorName();
+            string ramAmount = GetTotalRamAmount();
+            string gpuNameFull = GetGpuName();
+
+            // Simplification logic for CPU
+            string simplifiedCpuName = cpuNameFull;
+            if (cpuNameFull.Contains("Core(TM)"))
+            {
+                int startIndex = cpuNameFull.IndexOf("Core(TM)") + "Core(TM)".Length;
+                int endIndex = cpuNameFull.IndexOf(" CPU");
+                if (startIndex != -1 && endIndex != -1 && endIndex > startIndex)
+                {
+                    simplifiedCpuName = cpuNameFull.Substring(startIndex, endIndex - startIndex).Trim();
+                }
+            }
+            else if (cpuNameFull.Contains("Ryzen"))
+            {
+                int startIndex = cpuNameFull.IndexOf("Ryzen");
+                if (startIndex != -1)
+                {
+                    simplifiedCpuName = cpuNameFull.Substring(startIndex).Trim();
+                }
+            }
+
+            // Simplification logic for GPU
+            string simplifiedGpuName = gpuNameFull;
+            if (gpuNameFull.Contains("GeForce"))
+            {
+                int startIndex = gpuNameFull.IndexOf("GeForce");
+                if (startIndex != -1)
+                {
+                    simplifiedGpuName = gpuNameFull.Substring(startIndex).Trim();
+                }
+            }
+            else if (gpuNameFull.Contains("Radeon"))
+            {
+                int startIndex = gpuNameFull.IndexOf("Radeon");
+                if (startIndex != -1)
+                {
+                    simplifiedGpuName = gpuNameFull.Substring(startIndex).Trim();
+                }
+            }
+
+            // New: Get the simplified SSD name using the path provided as a parameter
+            string simplifiedSsdName = GetDriveDetails(ssdDrivePath);
+
+            // Combines all simplified names into a single string
+            return $"{simplifiedCpuName}, {ramAmount} , {simplifiedGpuName}, {simplifiedSsdName}";
+        }
+
         private BenchmarkResult RunRamBenchmark(Action<int, string> progressAction)
         {
+            string systemDrivePath = Path.GetPathRoot(Environment.GetFolderPath(Environment.SpecialFolder.System));
+
+            string systemConfig = GetSimplifiedSystemConfiguration(systemDrivePath);
+
             byte[] buffer = new byte[BenchmarkSettingsConstants.RamBufferSizeKb * 1024];
             long totalBytesToProcess = BenchmarkSettingsConstants.RamTestSizeMb * 1024 * 1024;
 
@@ -384,6 +502,7 @@ namespace UltraBench
                 Score = (int)score,
                 DetailedResult = $"Throughput: {ramSpeed:F2} MB/s",
                 ActualDurationMs = sw.ElapsedMilliseconds,
+                SystemConfiguration = systemConfig,
                 Success = true
             };
         }
@@ -418,11 +537,22 @@ namespace UltraBench
             string scriptFileName = $"PassMark_GPU_Script_{DateTime.Now:yyyyMMmmss}.ptscript";
             string scriptPath = Path.Combine(Path.GetTempPath(), scriptFileName);
 
+            double GpuScoreMax = ConfigManager.Config.MaximumPossibleScores.GpuScoreMax;
+
+            // This script runs the GPU Compute test
             string scriptContent = $@"
 RUN G3D_DIRECTCOMPUTE
 EXPORTHTML ""{reportPath}""
 EXIT
 ";
+
+            // --- Retrieve System Configuration Information ---
+            string cpuName = GetProcessorName();
+            string ramAmount = GetTotalRamAmount();
+            string gpuName = GetGpuName();
+            string systemConfig = $"{cpuName}, {ramAmount} RAM, {gpuName}";
+            // -------------------------------------------------
+
             if (!File.Exists(PassMarkExePath))
             {
                 MessageBox.Show("PassMark PerformanceTest is not found at the specified location.\n" +
@@ -432,146 +562,189 @@ EXIT
                 {
                     Title = "GPU Test",
                     Score = 0,
-                    DetailedResult = "PassMark PerformanceTest not found."
+                    DetailedResult = "PassMark PerformanceTest not found.",
+                    SystemConfiguration = systemConfig
                 };
             }
+
+            BenchmarkResult result = null;
+            Stopwatch stopwatch = new Stopwatch();
 
             try
             {
                 progressForm.UpdateProgress("Preparing GPU test...", BenchmarkSettingsConstants.GpuProgressInitial);
                 await File.WriteAllTextAsync(scriptPath, scriptContent);
 
-                ProcessStartInfo startInfo = new ProcessStartInfo
+                result = await Task.Run(() =>
                 {
-                    FileName = PassMarkExePath,
-                    Arguments = $"/s \"{scriptPath}\"",
-                    UseShellExecute = true, // Utiliser true pour "runas"
-                    Verb = "runas",       // Nécessite des droits admin pour démarrer PassMark
-                    CreateNoWindow = false
-                };
-
-                using (Process process = new Process { StartInfo = startInfo })
-                {
-                    progressForm.UpdateProgress("Launching GPU test with PassMark PerformanceTest...", BenchmarkSettingsConstants.GpuProgressCopyReport);
-                    process.Start();
-                    progressForm.UpdateProgress("GPU test in progress (this may take several minutes)...", BenchmarkSettingsConstants.GpuProgressParseReport);
-                    await Task.Run(() => process.WaitForExit(BenchmarkSettingsConstants.GpuBenchmarkTimeoutMs));
-
-                    if (!process.HasExited)
+                    ProcessStartInfo startInfo = new ProcessStartInfo
                     {
-                        // Attempt to kill the process si le timeout est atteint et qu'il ne s'est pas arrêté
-                        try
-                        {
-                            process.Kill();
-                        }
-                        catch (InvalidOperationException)
-                        {
-                            // Le processus a peut-être déjà quitté ou n'existe plus
-                        }
-                        return new BenchmarkResult
-                        {
-                            Title = "GPU Test",
-                            Score = 0,
-                            DetailedResult = "The PassMark test did not complete in time or was manually closed. The report may not have been generated."
-                        };
-                    }
-                }
+                        FileName = PassMarkExePath,
+                        Arguments = $"/s \"{scriptPath}\"",
+                        UseShellExecute = true,
+                        Verb = "runas",
+                        CreateNoWindow = false
+                    };
 
-                progressForm.UpdateProgress("Retrieving GPU test results...", BenchmarkSettingsConstants.GpuProgressFinalizing);
-                if (File.Exists(reportPath))
-                {
-                    string reportContent = await File.ReadAllTextAsync(reportPath, Encoding.Default); // Change Encoding.Unicode to Encoding.Default or Encoding.UTF8 as HTML is often not Unicode
-
-                    // --- START OF NEW LOGIC AVEC HTML AGILITY PACK ---
-                    var htmlDoc = new HtmlAgilityPack.HtmlDocument();
-                    htmlDoc.LoadHtml(reportContent);
-
-                    double gpuScore = 0;
-                    string detailedResult = "Could not find GPU Compute score in the report.";
-
-                    // On cherche le <tr> qui contient "GPU Compute (Ops./Sec.)" dans son premier <td>
-                    var targetRow = htmlDoc.DocumentNode.SelectNodes("//tr")
-                                            ?.FirstOrDefault(tr => tr.SelectNodes("td")?
-                                                                    .FirstOrDefault()?.InnerText.Contains("GPU Compute (Ops./Sec.)", StringComparison.OrdinalIgnoreCase) == true);
-
-                    if (targetRow != null)
+                    using (Process process = new Process { StartInfo = startInfo })
                     {
-                        // On récupère tous les <td> de cette ligne
-                        var tds = targetRow.SelectNodes("td");
-
-                        if (tds != null && tds.Any())
+                        progressForm.Invoke((MethodInvoker)delegate
                         {
-                            // La valeur est dans le dernier <td>
-                            var lastTd = tds.LastOrDefault();
+                            progressForm.UpdateProgress("Launching GPU test with PassMark PerformanceTest...", BenchmarkSettingsConstants.GpuProgressCopyReport);
+                        });
+                        stopwatch.Start();
+                        process.Start();
+                        progressForm.Invoke((MethodInvoker)delegate
+                        {
+                            progressForm.UpdateProgress("GPU test in progress (this may take several minutes)...", BenchmarkSettingsConstants.GpuProgressParseReport);
+                        });
+                        process.WaitForExit(BenchmarkSettingsConstants.GpuBenchmarkTimeoutMs);
+                        stopwatch.Stop();
 
-                            if (lastTd != null)
+                        if (!process.HasExited)
+                        {
+                            try { process.Kill(); } catch (InvalidOperationException) { }
+                            return new BenchmarkResult
                             {
-                                string rawScoreText = lastTd.InnerText.Trim(); // Supprime les espaces blancs
+                                Title = "GPU",
+                                Score = 0,
+                                DetailedResult = "The PassMark test did not complete in time or was manually closed. The report may not have been generated.",
+                                ActualDurationMs = stopwatch.ElapsedMilliseconds,
+                                Success = false,
+                                Timestamp = DateTime.Now,
+                                SystemConfiguration = systemConfig
+                            };
+                        }
+                    }
 
-                                // On extrait le nombre avant le " (" s'il existe
-                                int parenthesisIndex = rawScoreText.IndexOf(" (");
-                                if (parenthesisIndex != -1)
-                                {
-                                    rawScoreText = rawScoreText.Substring(0, parenthesisIndex);
-                                }
+                    progressForm.Invoke((MethodInvoker)delegate
+                    {
+                        progressForm.UpdateProgress("Retrieving GPU test results...", BenchmarkSettingsConstants.GpuProgressFinalizing);
+                    });
 
-                                if (double.TryParse(rawScoreText, NumberStyles.Any, CultureInfo.InvariantCulture, out gpuScore))
+                    if (File.Exists(reportPath))
+                    {
+                        string reportContent = File.ReadAllText(reportPath, Encoding.Default);
+                        var htmlDoc = new HtmlAgilityPack.HtmlDocument();
+                        htmlDoc.LoadHtml(reportContent);
+
+                        double gpuScore = 0;
+                        string detailedResult = "No GPU scores found.";
+
+                        // Dictionary to hold all found GPU scores
+                        var gpuDetailedScores = new Dictionary<string, double>();
+                        var testRows = htmlDoc.DocumentNode.SelectNodes("//tr")?.Where(tr => tr.SelectNodes("td")?.FirstOrDefault()?.InnerText.Contains("GPU", StringComparison.OrdinalIgnoreCase) == true);
+
+                        if (testRows != null)
+                        {
+                            foreach (var row in testRows)
+                            {
+                                var tds = row.SelectNodes("td");
+                                if (tds != null && tds.Count >= 2)
                                 {
-                                    detailedResult = ""; // Score trouvé, pas d'erreur détaillée
-                                }
-                                else
-                                {
-                                    detailedResult = $"Could not convert score '{rawScoreText}' to a number. Original content: '{lastTd.InnerText}'";
-                                    gpuScore = 0; // S'assurer que le score est à 0 en cas d'échec de parsing
+                                    string testName = tds.First().InnerText.Trim();
+                                    string rawScoreText = tds.Last().InnerText.Trim();
+
+                                    int parenthesisIndex = rawScoreText.IndexOf(" (");
+                                    if (parenthesisIndex != -1)
+                                    {
+                                        rawScoreText = rawScoreText.Substring(0, parenthesisIndex);
+                                    }
+
+                                    if (rawScoreText != "-")
+                                    {
+                                        double score;
+                                        if (double.TryParse(rawScoreText, NumberStyles.Any, CultureInfo.InvariantCulture, out score))
+                                        {
+                                            // Use the full test name as the key for accurate unit matching
+                                            gpuDetailedScores[testName] = score;
+                                        }
+                                    }
                                 }
                             }
                         }
-                    }
-                    // --- END OF NEW LOGIC ---
 
-                    return new BenchmarkResult
+                        if (gpuDetailedScores.Any())
+                        {
+                            var formattedScores = gpuDetailedScores.Select(kvp =>
+                            {
+                                string key = kvp.Key.Replace("DirectX ", "DX").Replace(" (Frames/Sec.)", "").Replace(" (Ops./Sec.)", "").Replace(" (Composite average)", "");
+                                string unit = "FPS";
+                                if (kvp.Key.Contains("Ops./Sec.", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    unit = "Ops./Sec.";
+                                }
+                                return $"{key}: {kvp.Value:N1} {unit}";
+                            });
+                            detailedResult = string.Join(", ", formattedScores);
+                        }
+
+                        if (gpuDetailedScores.ContainsKey("GPU Compute (Ops./Sec.)"))
+                        {
+                            gpuScore = gpuDetailedScores["GPU Compute (Ops./Sec.)"];
+                        }
+                        else if (gpuDetailedScores.ContainsKey("3D Graphics Mark (Composite average)"))
+                        {
+                            gpuScore = gpuDetailedScores["3D Graphics Mark (Composite average)"];
+                        }
+
+                        return new BenchmarkResult
+                        {
+                            Title = "GPU",
+                            Score = (int)Math.Round(gpuScore),
+                            DetailedResult = detailedResult,
+                            MaximumPossibleScore = GpuScoreMax,
+                            Success = true,
+                            Timestamp = DateTime.Now,
+                            ActualDurationMs = stopwatch.ElapsedMilliseconds,
+                            SystemConfiguration = systemConfig
+                        };
+                    }
+                    else
                     {
-                        Title = "GPU Test",
-                        Score = gpuScore,
-                        DetailedResult = detailedResult
-                    };
-                }
-                else
-                {
-                    return new BenchmarkResult
-                    {
-                        Title = "GPU Test",
-                        Score = 0,
-                        DetailedResult = "The PassMark PerformanceTest report was not generated."
-                    };
-                }
+                        return new BenchmarkResult
+                        {
+                            Title = "GPU",
+                            Score = 0,
+                            DetailedResult = "The PassMark PerformanceTest report was not generated.",
+                            Success = false,
+                            Timestamp = DateTime.Now,
+                            ActualDurationMs = stopwatch.ElapsedMilliseconds,
+                            SystemConfiguration = systemConfig
+                        };
+                    }
+                });
             }
             catch (Exception ex)
             {
-                // Don't forget to log l'exception réelle pour le débogage !
-                // Console.WriteLine($"Erreur: {ex.Message}");
+                if (stopwatch.IsRunning)
+                {
+                    stopwatch.Stop();
+                }
                 return new BenchmarkResult
                 {
-                    Title = "GPU Test",
+                    Title = "GPU",
                     Score = 0,
-                    DetailedResult = $"An error occurred during PassMark benchmark execution: {ex.Message}"
+                    DetailedResult = $"An error occurred during PassMark benchmark execution: {ex.Message}",
+                    Success = false,
+                    Timestamp = DateTime.Now,
+                    ActualDurationMs = stopwatch.ElapsedMilliseconds,
+                    SystemConfiguration = systemConfig
                 };
             }
             finally
             {
-                // Cleanup temporary files temporaires, très bien ça !
                 if (File.Exists(scriptPath))
                 {
                     File.Delete(scriptPath);
                 }
-                // You may also consider de supprimer le rapport HTML si tu n'en as plus besoin après lecture
                 if (File.Exists(reportPath))
                 {
                     File.Delete(reportPath);
                 }
             }
+            return result;
         }
-
         private void btnLaunchHWMonitor_Click(object sender, EventArgs e)
         {
             // C'est ici que tu devrais t'assurer que HWMonitorExePath a la bonne valeur.
@@ -663,6 +836,7 @@ EXIT
         private void btnShowHistory_Click(object sender, EventArgs e)
         {
             // Create an instance of HistoryForm, passing the existing history manager
+            string _historyFilePath = Path.Combine(Application.StartupPath, "benchmark_history.json");
             HistoryForm historyForm = new HistoryForm(_historyManager);
             historyForm.ShowDialog(); // Show it as a modal dialog (blocks parent until closed)
                                       // Or historyForm.Show(); // Show as non-modal (parent form remains usable)
@@ -670,8 +844,15 @@ EXIT
         }
 
         private async Task<BenchmarkResult> RunBenchmarkAndGetResult(string testType, int durationSeconds, ProgressForm progressForm, string specificDrivePath = null)
-        {           
+        {
             BenchmarkResult result = null;
+            // We get the system drive path once here, so we can use it for all tests
+            string systemDrivePath = Path.GetPathRoot(Environment.GetFolderPath(Environment.SpecialFolder.System));
+
+            // Access the maximum score from the configuration manager
+            double CpuScoreMax = ConfigManager.Config.MaximumPossibleScores.CpuScoreMax;
+            double GpuScoreMax = ConfigManager.Config.MaximumPossibleScores.GpuScoreMax;
+
             Action<int, string> updateProgressAction = (percentage, message) =>
             {
                 progressForm.UpdateProgress(message, percentage);
@@ -716,6 +897,11 @@ EXIT
                             }
 
                             long score = (long)(primeCalculationSpeed * BenchmarkSettingsConstants.CpuScoreMultiplier);
+
+                            // We pass the systemDrivePath to the new simplification method
+                            string systemConfig = GetSimplifiedSystemConfiguration(systemDrivePath);
+                            // ----------------------------------------------------
+                           
                             result = new BenchmarkResult
                             {
                                 Title = "CPU",
@@ -723,7 +909,9 @@ EXIT
                                 DetailedResult = $"Primes found: {primesFound}, Time: {finalSw.ElapsedMilliseconds} ms",
                                 ActualDurationMs = finalSw.ElapsedMilliseconds,
                                 Success = true,
-                                Timestamp = DateTime.Now // *** AJOUTE CETTE LIGNE ICI ***
+                                Timestamp = DateTime.Now,
+                                MaximumPossibleScore = GpuScoreMax,
+                                SystemConfiguration = systemConfig
                             };
                             updateProgressAction(100, "CPU : Benchmark Complete.");
                         });
@@ -732,28 +920,34 @@ EXIT
                     case "SSD":
                         progressForm.UpdateProgress("SSD : Starting SSD benchmark...", 0);
                         result = await Task.Run(() => RunSsdBenchmarkCombined(specificDrivePath, updateProgressAction));
-                        // *** AJOUTE CETTE LIGNE ICI APRÈS L'ASSIGNATION DU RÉSULTAT ***
-                        if (result != null) { result.Timestamp = DateTime.Now; }
+                        if (result != null)
+                        {
+                            result.Timestamp = DateTime.Now;
+                            result.SystemConfiguration = GetSimplifiedSystemConfiguration(systemDrivePath);
+                        }
                         break;
 
                     case "RAM":
                         progressForm.UpdateProgress("RAM : Starting RAM benchmark...", 0);
                         result = await Task.Run(() => RunRamBenchmark(updateProgressAction));
-                        // *** AJOUTE CETTE LIGNE ICI APRÈS L'ASSIGNATION DU RÉSULTAT ***
-                        if (result != null) { result.Timestamp = DateTime.Now; }
+                        if (result != null)
+                        {
+                            result.Timestamp = DateTime.Now;
+                            result.SystemConfiguration = GetSimplifiedSystemConfiguration(systemDrivePath);
+                        }
                         break;
 
                     case "GPU":
                         result = await RunGpuBenchmarkPassMark(progressForm);
-                        // *** AJOUTE CETTE LIGNE ICI APRÈS L'ASSIGNATION DU RÉSULTAT ***
-                        if (result != null) { result.Timestamp = DateTime.Now; }
+                        if (result != null)
+                        {
+                            result.Timestamp = DateTime.Now;
+                            result.SystemConfiguration = GetSimplifiedSystemConfiguration(systemDrivePath);
+                        }
                         break;
 
                     default:
                         result = new BenchmarkResult { Title = testType, Score = 0, DetailedResult = "Test type not recognized.", Success = false };
-                        // Pour le cas par défaut (erreur), tu peux aussi mettre un timestamp si tu veux,
-                        // mais ce n'est pas obligatoire car le test n'a pas réussi.
-                        // result.Timestamp = DateTime.Now;
                         break;
                 }
             }
@@ -762,8 +956,12 @@ EXIT
                 result = new BenchmarkResult { Title = testType, Score = 0, DetailedResult = $"Error: {ex.Message}", Success = false };
                 updateProgressAction(0, $"{testType} : Error: {ex.Message}");
                 MessageBox.Show($"An unexpected error occurred during the {testType} test: {ex.Message}", "Benchmark Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                // Si une exception se produit, tu peux aussi horodater l'erreur si besoin.
-                // result.Timestamp = DateTime.Now;
+                if (result != null)
+                {
+                    result.Timestamp = DateTime.Now;
+                    // On peut ajouter la configuration ici aussi en cas d'erreur
+                    result.SystemConfiguration = GetSimplifiedSystemConfiguration(systemDrivePath);
+                }
             }
             return result;
         }
@@ -832,50 +1030,23 @@ EXIT
             // Clearing TextBoxes or Display Labels
             SetResultNotExecuted(lblSsdResult, "SSD");
 
-            // --- ADDED: Explanation MessageBox for SSD Drive Selection (now in English) ---
-            MessageBox.Show(
-                "The SSD/HDD performance test requires you to select the drive (e.g., C:\\ or D:\\) where temporary test files will be created. " +
-                "Please choose a drive with enough free space (around 1 GB) and click 'OK' in the next window.",
-                "SSD/HDD Drive Selection Required",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            // Get the system drive path
+            string systemDrivePath = Path.GetPathRoot(Environment.GetFolderPath(Environment.SpecialFolder.System));
 
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            using (ProgressForm progressForm = new ProgressForm("SSD Test Progress", $"Starting SSD test on {systemDrivePath}..."))
             {
-                // UPDATED: Removed the description text from the FolderBrowserDialog
-                fbd.Description = "";
-                if (fbd.ShowDialog() == DialogResult.OK)
+                progressForm.Show();
+                BenchmarkResult ssdResult = await Task.Run(() => RunBenchmarkAndGetResult("SSD", 0, progressForm, systemDrivePath));
+
+                if (lblSsdResult != null)
                 {
-                    string selectedDrivePath = fbd.SelectedPath;
-                    using (ProgressForm progressForm = new ProgressForm("SSD Test Progress", $"Starting SSD test on {selectedDrivePath}..."))
-                    {
-                        progressForm.Show();
-                        BenchmarkResult ssdResult = await Task.Run(() => RunBenchmarkAndGetResult("SSD", 0, progressForm, selectedDrivePath));
-                        if (lblSsdResult != null)
-                        {
-                            UpdateResultLabel(lblSsdResult, "SSD", ssdResult.Score,
-                                              BenchmarkDisplayConstants.SSD_SCORE_GOOD_THRESHOLD,
-                                              BenchmarkDisplayConstants.SSD_SCORE_AVERAGE_THRESHOLD);
-                        }
-                        _benchmarkResults.Add(ssdResult);
-                        _historyManager.AddResult(ssdResult);
-                        progressForm.Close();
-                    }
+                    UpdateResultLabel(lblSsdResult, "SSD", ssdResult.Score,
+                                            BenchmarkDisplayConstants.SSD_SCORE_GOOD_THRESHOLD,
+                                            BenchmarkDisplayConstants.SSD_SCORE_AVERAGE_THRESHOLD);
                 }
-                else
-                {
-                    MessageBox.Show("SSD test cancelled. Please select a drive to continue.", "Test Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Add a result for SSD test indicating it was skipped/cancelled
-                    _benchmarkResults.Add(new BenchmarkResult
-                    {
-                        Title = "SSD",
-                        Score = 0,
-                        DetailedResult = "SSD Test skipped (Drive selection cancelled)",
-                        ActualDurationMs = 0,
-                        Success = false
-                    });
-                }
+                _benchmarkResults.Add(ssdResult);
+                _historyManager.AddResult(ssdResult);
+                progressForm.Close();
             }
         }
 
@@ -921,46 +1092,79 @@ EXIT
                 return;
             }
 
-            // Declare selectedDrivePath here to make it accessible later
-            string selectedDrivePath = null;
+            // Clearing TextBoxes or Display Labels
+            SetResultNotExecuted(lblCpuResult, "CPU");
 
-            // Execute tests sequentially in the desired order: CPU, RAM, GPU (conditional), SSD
-            await ExecuteSingleBenchmark("CPU", BenchmarkSettingsConstants.TargetCpuBenchmarkDurationMs / 1000, null);
-            await ExecuteSingleBenchmark("RAM", 0, null);
-
-            // --- UPDATED: Explanation MessageBox for SSD Drive Selection (now in English) ---
-            MessageBox.Show(
-                "The SSD/HDD performance test requires you to select the drive (e.g., C:\\ or D:\\) where temporary test files will be created. " +
-                "Please choose a drive with enough free space (around 1 GB) and click 'OK' in the next window.",
-                "SSD/HDD Drive Selection Required",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
-
-            // --- SSD Drive Selection (THIS IS THE CORRECT PLACE) ---
-            // This dialog will now appear AFTER CPU, RAM, and GPU tests have started/finished.
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            using (ProgressForm progressForm = new ProgressForm("CPU Test Progress", "Starting CPU test..."))
             {
-                // UPDATED: Removed the description text from the FolderBrowserDialog
-                fbd.Description = "";
-                if (fbd.ShowDialog() != DialogResult.OK)
+                progressForm.Show();
+                BenchmarkResult cpuResult = await RunBenchmarkAndGetResult("CPU", BenchmarkSettingsConstants.TargetCpuBenchmarkDurationMs / 1000, progressForm);
+                if (cpuResult != null)
                 {
-                    MessageBox.Show("Full stress test cancelled. Please select a drive for the SSD test.", "Test Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Add a result for SSD test indicating it was skipped/cancelled
-                    _benchmarkResults.Add(new BenchmarkResult
+                    if (lblCpuResult != null)
                     {
-                        Title = "SSD",
-                        Score = 0,
-                        DetailedResult = "SSD Test skipped (Drive selection cancelled)",
-                        ActualDurationMs = 0,
-                        Success = false
-                    });
-                    return; // Exit the Full Stress Test if SSD selection is cancelled
+                        UpdateResultLabel(lblCpuResult, "CPU", cpuResult.Score,
+                            BenchmarkDisplayConstants.CPU_SCORE_GOOD_THRESHOLD,
+                            BenchmarkDisplayConstants.CPU_SCORE_AVERAGE_THRESHOLD);
+                    }
+                    _benchmarkResults.Add(cpuResult);
+                    _historyManager.AddResult(cpuResult);
                 }
-                selectedDrivePath = fbd.SelectedPath;
+                else
+                {
+                    SetResultNotExecuted(lblCpuResult, "CPU");
+                }
+                progressForm.Close();
             }
 
-            await ExecuteSingleBenchmark("SSD", 0, selectedDrivePath); // SSD test after selection
+            // Clearing TextBoxes or Display Labels
+            SetResultNotExecuted(lblRamResult, "RAM");
+            // Ajoute un court délai pour permettre à l'UI de rafraîchir le label
+            await Task.Delay(20); // Attendre 20 millisecondes (ajuste si besoin)
+
+            using (ProgressForm progressForm = new ProgressForm("RAM Test Progress", "Starting RAM test..."))
+            {
+                progressForm.Show();
+                BenchmarkResult ramResult = await Task.Run(() => RunBenchmarkAndGetResult("RAM", 0, progressForm));
+                if (ramResult != null)
+                {
+                    if (lblRamResult != null)
+                    {
+                        UpdateResultLabel(lblRamResult, "RAM", ramResult.Score,
+                                        BenchmarkDisplayConstants.RAM_SCORE_GOOD_THRESHOLD,
+                                        BenchmarkDisplayConstants.RAM_SCORE_AVERAGE_THRESHOLD);
+                    }
+                    _benchmarkResults.Add(ramResult);
+                    _historyManager.AddResult(ramResult);
+                }
+                else
+                {
+                    SetResultNotExecuted(lblRamResult, "RAM");
+                }
+                progressForm.Close();
+            }
+
+            // Clearing TextBoxes or Display Labels
+            SetResultNotExecuted(lblSsdResult, "SSD");
+
+            // Get the system drive path
+            string systemDrivePath = Path.GetPathRoot(Environment.GetFolderPath(Environment.SpecialFolder.System));
+
+            using (ProgressForm progressForm = new ProgressForm("SSD Test Progress", $"Starting SSD test on {systemDrivePath}..."))
+            {
+                progressForm.Show();
+                BenchmarkResult ssdResult = await Task.Run(() => RunBenchmarkAndGetResult("SSD", 0, progressForm, systemDrivePath));
+
+                if (lblSsdResult != null)
+                {
+                    UpdateResultLabel(lblSsdResult, "SSD", ssdResult.Score,
+                                            BenchmarkDisplayConstants.SSD_SCORE_GOOD_THRESHOLD,
+                                            BenchmarkDisplayConstants.SSD_SCORE_AVERAGE_THRESHOLD);
+                }
+                _benchmarkResults.Add(ssdResult);
+                _historyManager.AddResult(ssdResult);
+                progressForm.Close();
+            }
 
             // --- Execute GPU test (conditional) ---
             if (btnTestGPU.Visible) // Check if the GPU test is available (i.e., PassMark is installed)
@@ -1100,6 +1304,11 @@ EXIT
         }
 
         private void Title_Info_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCpuInfo_Click(object sender, EventArgs e)
         {
 
         }

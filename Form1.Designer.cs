@@ -1,9 +1,14 @@
-//*********************************************
-// UltraBench Ver:1.0.0
-// Created by Dpfpic (Fabrice Piscia)
-// Site : https://github.com/dpfpic/UltraBench
-// Licensed under the MIT License
-//*********************************************
+/**
+* UltraBench – System Benchmark Tool
+ * Version : 1.0.0
+ * Created by Dpfpic (Fabrice Piscia)
+ * Licensed under the MIT License
+ * Repository: https://github.com/dpfpic/UltraBench
+ *
+ * Description:
+ * This file is part of the UltraBench project,
+ * a tool for benchmarking CPU, RAM, SSD and GPU.
+**/
 
 namespace UltraBench
 {
@@ -71,7 +76,6 @@ namespace UltraBench
             Title_Test = new System.Windows.Forms.Label();
             Title_Bench = new System.Windows.Forms.Label();
             Separator_2 = new System.Windows.Forms.Panel();
-            Separator_1 = new System.Windows.Forms.Panel();
             lblCpuResult = new System.Windows.Forms.Label();
             lblRamResult = new System.Windows.Forms.Label();
             lblSsdResult = new System.Windows.Forms.Label();
@@ -109,6 +113,7 @@ namespace UltraBench
             // 
             resources.ApplyResources(lblCpuInfo, "lblCpuInfo");
             lblCpuInfo.Name = "lblCpuInfo";
+            lblCpuInfo.Click += lblCpuInfo_Click;
             // 
             // lblRamInfo
             // 
@@ -188,15 +193,9 @@ namespace UltraBench
             // 
             // Separator_2
             // 
-            Separator_2.BackColor = System.Drawing.SystemColors.ControlDark;
             resources.ApplyResources(Separator_2, "Separator_2");
+            Separator_2.BackColor = System.Drawing.SystemColors.ControlDark;
             Separator_2.Name = "Separator_2";
-            // 
-            // Separator_1
-            // 
-            Separator_1.BackColor = System.Drawing.SystemColors.ControlDark;
-            resources.ApplyResources(Separator_1, "Separator_1");
-            Separator_1.Name = "Separator_1";
             // 
             // lblCpuResult
             // 
@@ -226,16 +225,16 @@ namespace UltraBench
             // 
             // flowLayoutPanelTests
             // 
+            resources.ApplyResources(flowLayoutPanelTests, "flowLayoutPanelTests");
             flowLayoutPanelTests.Controls.Add(btnTestGPU);
             flowLayoutPanelTests.Controls.Add(btnLaunchHWMonitor);
             flowLayoutPanelTests.Controls.Add(btnOpenReports);
-            resources.ApplyResources(flowLayoutPanelTests, "flowLayoutPanelTests");
             flowLayoutPanelTests.Name = "flowLayoutPanelTests";
             // 
             // Separator_3
             // 
-            Separator_3.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(Separator_3, "Separator_3");
+            Separator_3.BackColor = System.Drawing.SystemColors.Control;
             Separator_3.Name = "Separator_3";
             // 
             // btnShowHistory
@@ -261,7 +260,6 @@ namespace UltraBench
             Controls.Add(lblSsdResult);
             Controls.Add(lblRamResult);
             Controls.Add(lblCpuResult);
-            Controls.Add(Separator_1);
             Controls.Add(btnClose);
             Controls.Add(Separator_2);
             Controls.Add(Title_Bench);
@@ -286,7 +284,6 @@ namespace UltraBench
         private System.Windows.Forms.Label Title_Test;
         private System.Windows.Forms.Label Title_Bench;
         private System.Windows.Forms.Panel Separator_2;
-        private System.Windows.Forms.Panel Separator_1;
         private System.Windows.Forms.Label lblCpuResult;
         private System.Windows.Forms.Label lblRamResult;
         private System.Windows.Forms.Label lblSsdResult;

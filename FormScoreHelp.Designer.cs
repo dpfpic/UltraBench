@@ -1,3 +1,15 @@
+/**
+* UltraBench – System Benchmark Tool
+ * Version : 1.0.0
+ * Created by Dpfpic (Fabrice Piscia)
+ * Licensed under the MIT License
+ * Repository: https://github.com/dpfpic/UltraBench
+ *
+ * Description:
+ * This file is part of the UltraBench project,
+ * a tool for benchmarking CPU, RAM, SSD and GPU.
+**/
+
 // UltraBench – Created by Dpfpic (Fabrice Piscia)
 // Licensed under the MIT License
 //

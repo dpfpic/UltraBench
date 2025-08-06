@@ -1,4 +1,16 @@
-﻿namespace UltraBench
+/**
+* UltraBench – System Benchmark Tool
+ * Version : 1.0.0
+ * Created by Dpfpic (Fabrice Piscia)
+ * Licensed under the MIT License
+ * Repository: https://github.com/dpfpic/UltraBench
+ *
+ * Description:
+ * This file is part of the UltraBench project,
+ * a tool for benchmarking CPU, RAM, SSD and GPU.
+**/
+
+namespace UltraBench
 {
     partial class HistoryForm
     {
@@ -31,7 +43,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            dgvHistory = new System.Windows.Forms.DataGridView();
+            dgvHistory = new CustomDataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvHistory).BeginInit();
             SuspendLayout();
             // 
@@ -65,6 +77,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvHistory;
+        // ATTENTION : LIGNE MODIFIÉE ICI
+        private UltraBench.CustomDataGridView dgvHistory; // CHANGÉ EN UltraBench.CustomDataGridView
+        // private System.Windows.Forms.TextBox txtErrorLog;
     }
 }
