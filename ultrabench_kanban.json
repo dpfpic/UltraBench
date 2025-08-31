@@ -1,0 +1,39 @@
+{
+  "columns": [
+    {
+      "name": "To Do",
+      "cards": [
+        {"note": "UltraBench (UI project, WinForms forms at root)"},
+        {"note": "UltraBench.Core (business logic, models, services)"},
+        {"note": "UltraBench.Resources (localization, resx files)"},
+        {"note": "UltraBench.Controls (custom controls)"},
+        {"note": "UltraBench.Utils (utility classes)"},
+        {"note": "GlobalUsings.cs – Add system usings"},
+        {"note": "GlobalUsings.cs – Add project usings"},
+        {"note": "LocalizationManager inside Resources"},
+        {"note": "LocalizationUtils inside Utils"},
+        {"note": "Event system for LanguageChanged"},
+        {"note": "Ensure comments are in English"},
+        {"note": "Forms at solution root"},
+        {"note": "Apply naming convention (ScoreHelpForm.cs)"},
+        {"note": "BenchmarkHistoryManager inside Core.Services"},
+        {"note": "IResult + models inside Core.Models"},
+        {"note": "Consistent namespaces"},
+        {"note": "Remove duplicates (UltraBenchHistoryManager)"},
+        {"note": "Harmonize namespaces"},
+        {"note": "Ensure correct ProjectReference"},
+        {"note": "Verify solution builds without errors"},
+        {"note": "Add real functionality incrementally"},
+        {"note": "Prepare repo for GitHub (English comments, clean structure)"}
+      ]
+    },
+    {
+      "name": "In Progress",
+      "cards": []
+    },
+    {
+      "name": "Done",
+      "cards": []
+    }
+  ]
+}
